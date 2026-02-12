@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AiTextBotz - AI Chatbot & Messaging Automation</title>
+    <meta name="description"
+        content="AiTextBotz - The ultimate AI-powered chatbot and messaging automation platform for your business. Enhance customer support and boost sales effortlessly.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo">
+                    <img src="assets/logo.png" alt="AiTextBotz Logo" class="logo-img"
+                        onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+                    <span class="logo-text" style="display: none;">AiTextBotz</span>
+                </a>
+                <div class="nav-links">
+                    <a href="#features">Features</a>
+                    <a href="#channels">Channels</a>
+                    <a href="#forms">Forms</a>
+                    <a href="#integrations">Integrations</a>
+                    <a href="#faq">FAQ</a>
+                    <div class="header-cta pc-hidden"> <!-- Kept for mobile flow, but wait, usually we want one list -->
+                        <!-- Actually, just appending them as siblings or nested? 
+                             Let's just put them in the same container for flex handling -->
+                        <a href="https://app.aitextbotz.com/login" class="btn btn-secondary mobile-only-btn">Log In</a>
+                        <a href="https://app.aitextbotz.com/register" class="btn btn-primary mobile-only-btn">Get
+                            Started</a>
+                    </div>
+                </div>
+                <div class="header-cta desktop-only">
+                    <a href="https://app.aitextbotz.com/login" class="btn btn-secondary">Log In</a>
+                    <a href="https://app.aitextbotz.com/register" class="btn btn-primary">Get Started</a>
+                </div>
+                <div class="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <span class="badge">New: GPT-4 Omni Integration</span>
+                <h1>Supercharge Your Customer Support with <span class="text-gradient">AiTextBotz</span></h1>
+                <p>Automate conversations, boost engagement, and drive sales 24/7 with our intelligent AI chatbot
+                    platform. No coding required.</p>
+                <div class="hero-buttons">
+                    <a href="https://app.aitextbotz.com/register" class="btn btn-primary btn-lg">Start Free Trial</a>
+                    <a href="#" class="btn btn-outline btn-lg"><i class="fas fa-play"></i> Watch Demo</a>
+                </div>
+                <div class="trust-badges">
+                    <span>Trusted by 500+ businesses</span>
+                    <div class="stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="dashboard-preview">
+                    <div class="dashboard-header">
+                        <div class="dot red"></div>
+                        <div class="dot yellow"></div>
+                        <div class="dot green"></div>
+                    </div>
+                    <div class="dashboard-body">
+                        <div class="chat-interface">
+                            <div class="message user">Hi, I need help with my order.</div>
+                            <div class="message bot">Hello! I can help with that. Please provide your order ID.</div>
+                            <div class="message user">#12345</div>
+                            <div class="message bot">Thanks! Your order #12345 is out for delivery and will arrive by
+                                tomorrow.</div>
+                        </div>
+                    </div>
+                    <div class="floating-card card-1">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Order Resolved</span>
+                    </div>
+                    <div class="floating-card card-2">
+                        <i class="fas fa-user-plus"></i>
+                        <span>New Lead</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-header center">
+                <span class="subtitle">Why AiTextBotz?</span>
+                <h2>All-in-One Communication Platform</h2>
+            </div>
+            <div class="features-container">
+                <!-- Feature 1 -->
+                <div class="feature-row">
+                    <div class="feature-text">
+                        <div class="icon-box">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <h3>50+ Contact Channels</h3>
+                        <p>Let your customers contact you via their preferred messenger. WhatsApp, Viber, Telegram, and
+                            over 50 communication channels covered. Centralize all your conversations in one unified
+                            inbox.</p>
+                        <ul class="feature-list">
+                            <li><i class="fas fa-check"></i> Unified Inbox</li>
+                            <li><i class="fas fa-check"></i> Cross-channel history</li>
+                            <li><i class="fas fa-check"></i> Automatic routing</li>
+                        </ul>
+                    </div>
+                    <div class="feature-visual">
+                        <!-- CSS Mockup: Central Hub -->
+                        <div class="mockup-channels-hub">
+                            <i class="fas fa-comments"></i>
+                            <div class="orbit-line"></div>
+                            <div class="orbit-icon orbit-1"><i class="fab fa-whatsapp"></i></div>
+                            <div class="orbit-icon orbit-2"><i class="fab fa-telegram-plane"></i></div>
+                            <div class="orbit-icon orbit-3"><i class="fab fa-viber"></i></div>
+                            <div class="orbit-icon orbit-4"><i class="fab fa-skype"></i></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="feature-row reverse">
+                    <div class="feature-text">
+                        <div class="icon-box">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <h3>Full-featured Live Chat</h3>
+                        <p>Our service provides a full-featured live chat widget that can help you to communicate with
+                            your customers instantly from your website. Includes file sharing, emojis, and agent
+                            transfer.</p>
+                        <a href="#" class="btn btn-outline">See Live Demo</a>
+                    </div>
+                    <div class="feature-visual">
+                        <!-- CSS Mockup: Chat Window -->
+                        <div class="mockup-chat-window">
+                            <div class="mockup-header">
+                                <span>Support Agent</span>
+                                <i class="fas fa-ellipsis-v"></i>
+                            </div>
+                            <div class="mockup-body">
+                                <div class="mockup-msg left">Hello! How can I help you today?</div>
+                                <div class="mockup-msg right">I have a question about pricing.</div>
+                                <div class="mockup-msg left">Sure, I can explain our plans...</div>
+                            </div>
+                            <div class="mockup-input">Type a message...</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="feature-row">
+                    <div class="feature-text">
+                        <div class="icon-box">
+                            <i class="fas fa-paint-brush"></i>
+                        </div>
+                        <h3>Fully-customizable Widget</h3>
+                        <p>Customize your widget color, style, icons, animation, and position to fit your branding. You
+                            can set it up separately for desktop and mobile devices to ensure a perfect user experience.
+                        </p>
+                    </div>
+                    <div class="feature-visual">
+                        <!-- CSS Mockup: Settings Panel -->
+                        <div class="mockup-settings">
+                            <div class="setting-row">
+                                <span class="setting-label">Position</span>
+                                <div class="setting-tabs">
+                                    <div class="setting-tab active">Right</div>
+                                    <div class="setting-tab">Left</div>
+                                </div>
+                            </div>
+                            <div class="setting-row">
+                                <span class="setting-label">Theme Color</span>
+                                <div class="color-picker">
+                                    <div class="color-dot active" style="background: #392C7B;"></div>
+                                    <div class="color-dot" style="background: #4C4ECD;"></div>
+                                    <div class="color-dot" style="background: #10b981;"></div>
+                                    <div class="color-dot" style="background: #3b82f6;"></div>
+                                </div>
+                            </div>
+                            <div class="setting-row">
+                                <span class="setting-label">Icon Style</span>
+                                <div class="setting-tabs">
+                                    <div class="setting-tab active">Round</div>
+                                    <div class="setting-tab">Square</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Messengers & Socials Section -->
+    <section id="channels" class="section-light">
+        <div class="container">
+            <div class="split-section">
+                <div class="split-text">
+                    <span class="subtitle">Messengers</span>
+                    <h2>Connect on Every Messenger</h2>
+                    <p>Make it easy for your visitors to communicate in the way they prefer. Choose the channels that
+                        can help you convert visitors into customers.</p>
+                    <ul class="feature-list">
+                        <li><i class="fab fa-whatsapp"></i> WhatsApp</li>
+                        <li><i class="fab fa-viber"></i> Viber</li>
+                        <li><i class="fab fa-telegram"></i> Telegram</li>
+                        <li><i class="fab fa-skype"></i> Skype</li>
+                        <li><i class="fab fa-discord"></i> Discord</li>
+                        <li><i class="fab fa-slack"></i> Slack</li>
+                    </ul>
+                </div>
+                <div class="split-visual grid-visual">
+                    <div class="grid-card"><i class="fab fa-whatsapp"></i></div>
+                    <div class="grid-card"><i class="fab fa-facebook-messenger"></i></div>
+                    <div class="grid-card"><i class="fab fa-viber"></i></div>
+                    <div class="grid-card"><i class="fab fa-telegram"></i></div>
+                    <div class="grid-card"><i class="fab fa-skype"></i></div>
+                    <div class="grid-card"><i class="fab fa-discord"></i></div>
+                    <div class="grid-card"><i class="fab fa-slack"></i></div>
+                    <div class="grid-card"><i class="fas fa-comment-dots"></i></div>
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="split-section reverse">
+                <div class="split-text">
+                    <span class="subtitle">Social Networks</span>
+                    <h2>Expand Your Social Reach</h2>
+                    <p>Connect with audiences on a variety of social networks. Whether you prefer the visual focus of
+                        Instagram or professional networking of LinkedIn.</p>
+                    <div class="social-tags">
+                        <span>Facebook</span>
+                        <span>Instagram</span>
+                        <span>X (Twitter)</span>
+                        <span>LinkedIn</span>
+                        <span>YouTube</span>
+                        <span>VK</span>
+                        <span>Behance</span>
+                        <span>Dribbble</span>
+                        <span>Pinterest</span>
+                        <span>TikTok</span>
+                    </div>
+                </div>
+                <div class="split-visual grid-visual">
+                    <div class="grid-card"><i class="fab fa-facebook-f"></i></div>
+                    <div class="grid-card"><i class="fab fa-instagram"></i></div>
+                    <div class="grid-card"><i class="fab fa-twitter"></i></div>
+                    <div class="grid-card"><i class="fab fa-linkedin-in"></i></div>
+                    <div class="grid-card"><i class="fab fa-youtube"></i></div>
+                    <div class="grid-card"><i class="fab fa-vk"></i></div>
+                    <div class="grid-card"><i class="fab fa-behance"></i></div>
+                    <div class="grid-card"><i class="fab fa-dribbble"></i></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Live Chat System -->
+    <section class="live-chat">
+        <div class="container">
+            <div class="split-section">
+                <div class="split-text">
+                    <span class="subtitle">Live Chat System</span>
+                    <h2>Build Your Own Support Team</h2>
+                    <p>With chat agent functionality, you can add agents to handle all incoming live chat messages.</p>
+                    <ul class="feature-check-list">
+                        <li>Each chat agent gets their own dashboard</li>
+                        <li>Handle and reply to messages instantly</li>
+                        <li><strong>Telegram Gateway:</strong> Receive and reply to incoming messages directly from the
+                            Telegram app</li>
+                    </ul>
+                </div>
+                <div class="split-visual">
+                    <!-- Abstract representation of chat dashboard -->
+                    <div class="chat-dashboard-mockup">
+                        <div class="cd-sidebar">
+                            <div class="cd-avatar"></div>
+                            <div class="cd-avatar"></div>
+                            <div class="cd-avatar"></div>
+                        </div>
+                        <div class="cd-main">
+                            <div class="cd-msg-bubble">New support request received</div>
+                            <div class="cd-reply-box">Reply...</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Built-in Forms -->
+    <section id="forms" class="section-light">
+        <div class="container">
+            <div class="section-header center">
+                <span class="subtitle">Data Collection</span>
+                <h2>Built-in Forms</h2>
+                <p>Gather data, leads, and feedback without users leaving the page.</p>
+            </div>
+            <div class="forms-grid">
+                <div class="form-card">
+                    <div class="form-icon"><i class="fas fa-comment-medical"></i></div>
+                    <h3>Feedback Form</h3>
+                    <p>Gather customer feedback seamlessly. Share entries through email, Telegram, or webhook.</p>
+                </div>
+                <div class="form-card">
+                    <div class="form-icon"><i class="fas fa-envelope-open-text"></i></div>
+                    <h3>Newsletter Form</h3>
+                    <p>Increase signups with a registration widget. Link data to your newsletter service via webhooks.
+                    </p>
+                </div>
+                <div class="form-card">
+                    <div class="form-icon"><i class="fas fa-phone-volume"></i></div>
+                    <h3>Callback Form</h3>
+                    <p>Collect names and phone numbers of potential customers requiring assistance.</p>
+                </div>
+                <div class="form-card">
+                    <div class="form-icon"><i class="fas fa-paper-plane"></i></div>
+                    <h3>Direct Email Form</h3>
+                    <p>Allow visitors to ask questions directly. Customizable fields with optional GDPR checkbox.</p>
+                </div>
+            </div>
+            <div class="form-builder-promo">
+                <h4><i class="fas fa-tools"></i> Powerful Form Builder</h4>
+                <p>Create your own forms. Add/remove fields, change labels, placeholders, and styling. Get notifications
+                    for every submission.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Platforms (CMS) -->
+    <section class="platforms">
+        <div class="container">
+            <div class="section-header center">
+                <span class="subtitle">Any Site, Any CMS</span>
+                <h2>Integrate Anywhere</h2>
+                <p>Works with custom sites via Embed code or dedicated plugins.</p>
+            </div>
+            <div class="logo-grid-small">
+                <div class="logo-box"><i class="fab fa-wordpress"></i><span>WordPress</span></div>
+                <div class="logo-box"><i class="fab fa-shopify"></i><span>Shopify</span></div>
+                <div class="logo-box"><i class="fab fa-wix"></i><span>WIX</span></div>
+                <div class="logo-box"><i class="fab fa-joomla"></i><span>Joomla</span></div>
+                <div class="logo-box"><i class="fab fa-opencart"></i><span>OpenCart</span></div>
+                <div class="logo-box"><i class="fab fa-magento"></i><span>Magento</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Useful Integrations -->
+    <section id="integrations" class="integrations section-light">
+        <div class="container">
+            <div class="section-header center">
+                <span class="subtitle">Ecosystem</span>
+                <h2>Useful Integrations</h2>
+            </div>
+            <div class="integrations-cards">
+                <div class="int-card">
+                    <div class="int-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h4>reCaptcha V3</h4>
+                    <p>Prevent SPAM automatically</p>
+                </div>
+                <div class="int-card">
+                    <div class="int-icon"><i class="fab fa-telegram-plane"></i></div>
+                    <h4>Telegram</h4>
+                    <p>Receive notifications instantly</p>
+                </div>
+                <div class="int-card">
+                    <div class="int-icon"><i class="fas fa-sms"></i></div>
+                    <h4>Twilio</h4>
+                    <p>Receive SMS notifications</p>
+                </div>
+                <div class="int-card">
+                    <div class="int-icon"><i class="fas fa-chart-bar"></i></div>
+                    <h4>Google Analytics</h4>
+                    <p>Track events and conversions</p>
+                </div>
+                <div class="int-card">
+                    <div class="int-icon"><i class="fas fa-briefcase"></i></div>
+                    <h4>Perfex CRM</h4>
+                    <p>Create leads directly in CRM</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials section-dark-bg">
+        <div class="container">
+            <div class="section-header center">
+                <span class="subtitle">Success Stories</span>
+                <h2>Trusted by High-Growth Companies</h2>
+            </div>
+            <div class="testimonials-grid">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p>"AiTextBotz transformed our customer support. We reduced response times by 80% and increased
+                            sales conversions overnight. The unified inbox is a game changer."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar"><i class="fas fa-user-circle"></i></div>
+                        <div class="author-info">
+                            <h5>Sarah Johnson</h5>
+                            <span>CMO at TechFlow</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p>"The ability to integrate WhatsApp, Telegram, and our website chat into one dashboard has
+                            simplified our workflow immensely. Highly recommended!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar"><i class="fas fa-user-circle"></i></div>
+                        <div class="author-info">
+                            <h5>David Chen</h5>
+                            <span>Founder, UrbanStyle</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p>"Setup was incredibly easy. We were up and running with automated flows in less than an hour.
+                            The support team is also fantastic and very responsive."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar"><i class="fas fa-user-circle"></i></div>
+                        <div class="author-info">
+                            <h5>Emily Davis</h5>
+                            <span>Head of Support, FinWise</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section (Preserved) -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <div class="section-header center">
+                <span class="subtitle">FAQ</span>
+                <h2>Frequently Asked Questions</h2>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Is there a free trial?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes, we offer a 14-day free trial with full access to all features. No credit card required.
+                        </p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Can I integrate with my existing CRM?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Absolutely via our API and native integrations with popular CRMs like Salesforce, HubSpot,
+                            and Zoho.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Do I need coding skills?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Not at all! Our visual flow builder allows you to create complex chatbot flows using a simple
+                            drag-and-drop interface.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Can I use it on multiple websites?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes, our Pro and Business plans support multiple domain installations. You can manage all
+                            your sites from a single dashboard.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Is my data secure?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We take security seriously. All data is encrypted at rest and in transit using
+                            industry-standard AES-256 encryption protocols.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Do you offer custom enterprise solutions?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes, we offer tailored solutions for large enterprises including custom integrations,
+                            dedicated support, and SLA guarantees. Contact our sales team for details.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to automate your business?</h2>
+                <p>Join thousands of businesses using AiTextBotz today.</p>
+                <div class="cta-buttons">
+                    <a href="https://app.aitextbotz.com/register" class="btn btn-lg btn-primary">Get Started Now</a>
+                    <a href="#" class="btn btn-lg btn-outline">Contact Sales</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-cta-box">
+                <div class="footer-cta-text">
+                    <h3>Stay in the loop</h3>
+                    <p>Join our newsletter for the latest updates and exclusive offers.</p>
+                </div>
+                <div class="footer-newsletter">
+                    <input type="email" placeholder="Enter your email">
+                    <button class="btn btn-primary">Subscribe</button>
+                </div>
+            </div>
+
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="assets/logo.png" alt="AiTextBotz" class="logo-img"
+                            onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+                        <span class="logo-text" style="display: none; color: white;">AiTextBotz</span>
+                    </div>
+                    <p>Reinventing customer communication with Artificial Intelligence. Build better relationships,
+                        automatically.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="#">Features</a></li>
+                        <li><a href="#">Integrations</a></li>
+                        <li><a href="#">Pricing</a></li>
+                        <li><a href="#">Changelog</a></li>
+                        <li><a href="#">Documentation</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Partners</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                        <li><a href="#">Security</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 AiTextBotz. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Status</a>
+                    <span class="dot-separator">&bull;</span>
+                    <a href="#">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
