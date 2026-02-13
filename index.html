@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="assets/img/favicon.png">
     <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -22,9 +23,7 @@
         <div class="container">
             <nav class="navbar">
                 <a href="#" class="logo">
-                    <img src="assets/logo.png" alt="AiTextBotz Logo" class="logo-img"
-                        onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
-                    <span class="logo-text" style="display: none;">AiTextBotz</span>
+                    <img src="assets/img/logo.png" alt="AiTextBotz Logo" class="logo-img">
                 </a>
                 <div class="nav-links">
                     <a href="#features">Features</a>
@@ -61,148 +60,96 @@
                     platform. No coding required.</p>
                 <div class="hero-buttons">
                     <a href="https://app.aitextbotz.com/register" class="btn btn-primary btn-lg">Start Free Trial</a>
-                    <a href="#" class="btn btn-outline btn-lg"><i class="fas fa-play"></i> Watch Demo</a>
+                    <a href="https://app.aitextbotz.com/login" class="btn btn-outline btn-lg">Login</a>
                 </div>
                 <div class="trust-badges">
                     <span>Trusted by 500+ businesses</span>
-                    <div class="stars">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                            class="fas fa-star"></i><i class="fas fa-star"></i>
-                    </div>
                 </div>
             </div>
             <div class="hero-image">
-                <div class="dashboard-preview">
-                    <div class="dashboard-header">
-                        <div class="dot red"></div>
-                        <div class="dot yellow"></div>
-                        <div class="dot green"></div>
-                    </div>
-                    <div class="dashboard-body">
-                        <div class="chat-interface">
-                            <div class="message user">Hi, I need help with my order.</div>
-                            <div class="message bot">Hello! I can help with that. Please provide your order ID.</div>
-                            <div class="message user">#12345</div>
-                            <div class="message bot">Thanks! Your order #12345 is out for delivery and will arrive by
-                                tomorrow.</div>
-                        </div>
-                    </div>
-                    <div class="floating-card card-1">
-                        <i class="fas fa-check-circle"></i>
-                        <span>Order Resolved</span>
-                    </div>
-                    <div class="floating-card card-2">
-                        <i class="fas fa-user-plus"></i>
-                        <span>New Lead</span>
-                    </div>
-                </div>
+                <img src="assets/img/hero-banner.webp" alt="AiTextBotz Dashboard" class="hero-dashboard-img">
             </div>
         </div>
     </section>
 
     <!-- Core Features Section -->
-    <section id="features" class="features">
+    <section id="features" class="features-section">
         <div class="container">
             <div class="section-header center">
                 <span class="subtitle">Why AiTextBotz?</span>
                 <h2>All-in-One Communication Platform</h2>
             </div>
-            <div class="features-container">
+
+            <div class="feature-cards">
                 <!-- Feature 1 -->
-                <div class="feature-row">
-                    <div class="feature-text">
-                        <div class="icon-box">
-                            <i class="fas fa-globe"></i>
+                <div class="feature-card">
+                    <div class="feature-row">
+                        <div class="feature-text">
+                            <div class="icon-box">
+                                <i class="fas fa-globe"></i>
+                            </div>
+                            <h3>50+ Contact Channels</h3>
+                            <p>Let your customers contact you via their preferred messenger. WhatsApp, Viber, Telegram,
+                                and
+                                over 50 communication channels covered. Centralize all your conversations in one unified
+                                inbox.</p>
+                            <ul class="feature-list">
+                                <li><i class="fas fa-check"></i> Unified Inbox</li>
+                                <li><i class="fas fa-check"></i> Cross-channel history</li>
+                                <li><i class="fas fa-check"></i> Automatic routing</li>
+                            </ul>
                         </div>
-                        <h3>50+ Contact Channels</h3>
-                        <p>Let your customers contact you via their preferred messenger. WhatsApp, Viber, Telegram, and
-                            over 50 communication channels covered. Centralize all your conversations in one unified
-                            inbox.</p>
-                        <ul class="feature-list">
-                            <li><i class="fas fa-check"></i> Unified Inbox</li>
-                            <li><i class="fas fa-check"></i> Cross-channel history</li>
-                            <li><i class="fas fa-check"></i> Automatic routing</li>
-                        </ul>
-                    </div>
-                    <div class="feature-visual">
-                        <!-- CSS Mockup: Central Hub -->
-                        <div class="mockup-channels-hub">
-                            <i class="fas fa-comments"></i>
-                            <div class="orbit-line"></div>
-                            <div class="orbit-icon orbit-1"><i class="fab fa-whatsapp"></i></div>
-                            <div class="orbit-icon orbit-2"><i class="fab fa-telegram-plane"></i></div>
-                            <div class="orbit-icon orbit-3"><i class="fab fa-viber"></i></div>
-                            <div class="orbit-icon orbit-4"><i class="fab fa-skype"></i></div>
+                        <div class="feature-visual white-bg-visual">
+                            <img src="assets/img/50_Channel.webp" alt="Unified Inbox" class="feature-img">
                         </div>
                     </div>
                 </div>
 
                 <!-- Feature 2 -->
-                <div class="feature-row reverse">
-                    <div class="feature-text">
-                        <div class="icon-box">
-                            <i class="fas fa-comments"></i>
+                <div class="feature-card">
+                    <div class="feature-row">
+                        <div class="feature-text">
+                            <div class="icon-box">
+                                <i class="fas fa-comments"></i>
+                            </div>
+                            <h3>Full-featured Live Chat</h3>
+                            <p>Our service provides a full-featured live chat widget that can help you to communicate
+                                with
+                                your customers instantly from your website. Includes file sharing, emojis, and agent
+                                transfer.</p>
+                            <ul class="feature-list">
+                                <li><i class="fas fa-check"></i> File sharing & Emojis</li>
+                                <li><i class="fas fa-check"></i> Agent Transfer support</li>
+                                <li><i class="fas fa-check"></i> Real-time typing indicators</li>
+                            </ul>
                         </div>
-                        <h3>Full-featured Live Chat</h3>
-                        <p>Our service provides a full-featured live chat widget that can help you to communicate with
-                            your customers instantly from your website. Includes file sharing, emojis, and agent
-                            transfer.</p>
-                        <a href="#" class="btn btn-outline">See Live Demo</a>
-                    </div>
-                    <div class="feature-visual">
-                        <!-- CSS Mockup: Chat Window -->
-                        <div class="mockup-chat-window">
-                            <div class="mockup-header">
-                                <span>Support Agent</span>
-                                <i class="fas fa-ellipsis-v"></i>
-                            </div>
-                            <div class="mockup-body">
-                                <div class="mockup-msg left">Hello! How can I help you today?</div>
-                                <div class="mockup-msg right">I have a question about pricing.</div>
-                                <div class="mockup-msg left">Sure, I can explain our plans...</div>
-                            </div>
-                            <div class="mockup-input">Type a message...</div>
+                        <div class="feature-visual white-bg-visual">
+                            <img src="assets/img/Contact-Channel.webp" alt="Live Chat" class="feature-img">
                         </div>
                     </div>
                 </div>
 
                 <!-- Feature 3 -->
-                <div class="feature-row">
-                    <div class="feature-text">
-                        <div class="icon-box">
-                            <i class="fas fa-paint-brush"></i>
+                <div class="feature-card">
+                    <div class="feature-row">
+                        <div class="feature-text">
+                            <div class="icon-box">
+                                <i class="fas fa-paint-brush"></i>
+                            </div>
+                            <h3>Fully-customizable Widget</h3>
+                            <p>Customize your widget color, style, icons, animation, and position to fit your branding.
+                                You
+                                can set it up separately for desktop and mobile devices to ensure a perfect user
+                                experience.
+                            </p>
+                            <ul class="feature-list">
+                                <li><i class="fas fa-check"></i> Customizable colors & branding</li>
+                                <li><i class="fas fa-check"></i> Device-specific settings</li>
+                                <li><i class="fas fa-check"></i> Flexible Widget positioning</li>
+                            </ul>
                         </div>
-                        <h3>Fully-customizable Widget</h3>
-                        <p>Customize your widget color, style, icons, animation, and position to fit your branding. You
-                            can set it up separately for desktop and mobile devices to ensure a perfect user experience.
-                        </p>
-                    </div>
-                    <div class="feature-visual">
-                        <!-- CSS Mockup: Settings Panel -->
-                        <div class="mockup-settings">
-                            <div class="setting-row">
-                                <span class="setting-label">Position</span>
-                                <div class="setting-tabs">
-                                    <div class="setting-tab active">Right</div>
-                                    <div class="setting-tab">Left</div>
-                                </div>
-                            </div>
-                            <div class="setting-row">
-                                <span class="setting-label">Theme Color</span>
-                                <div class="color-picker">
-                                    <div class="color-dot active" style="background: #392C7B;"></div>
-                                    <div class="color-dot" style="background: #4C4ECD;"></div>
-                                    <div class="color-dot" style="background: #10b981;"></div>
-                                    <div class="color-dot" style="background: #3b82f6;"></div>
-                                </div>
-                            </div>
-                            <div class="setting-row">
-                                <span class="setting-label">Icon Style</span>
-                                <div class="setting-tabs">
-                                    <div class="setting-tab active">Round</div>
-                                    <div class="setting-tab">Square</div>
-                                </div>
-                            </div>
+                        <div class="feature-visual white-bg-visual">
+                            <img src="assets/img/feature_custom.svg" alt="Custom Widget" class="feature-img">
                         </div>
                     </div>
                 </div>
@@ -219,14 +166,7 @@
                     <h2>Connect on Every Messenger</h2>
                     <p>Make it easy for your visitors to communicate in the way they prefer. Choose the channels that
                         can help you convert visitors into customers.</p>
-                    <ul class="feature-list">
-                        <li><i class="fab fa-whatsapp"></i> WhatsApp</li>
-                        <li><i class="fab fa-viber"></i> Viber</li>
-                        <li><i class="fab fa-telegram"></i> Telegram</li>
-                        <li><i class="fab fa-skype"></i> Skype</li>
-                        <li><i class="fab fa-discord"></i> Discord</li>
-                        <li><i class="fab fa-slack"></i> Slack</li>
-                    </ul>
+
                 </div>
                 <div class="split-visual grid-visual">
                     <div class="grid-card"><i class="fab fa-whatsapp"></i></div>
@@ -248,18 +188,6 @@
                     <h2>Expand Your Social Reach</h2>
                     <p>Connect with audiences on a variety of social networks. Whether you prefer the visual focus of
                         Instagram or professional networking of LinkedIn.</p>
-                    <div class="social-tags">
-                        <span>Facebook</span>
-                        <span>Instagram</span>
-                        <span>X (Twitter)</span>
-                        <span>LinkedIn</span>
-                        <span>YouTube</span>
-                        <span>VK</span>
-                        <span>Behance</span>
-                        <span>Dribbble</span>
-                        <span>Pinterest</span>
-                        <span>TikTok</span>
-                    </div>
                 </div>
                 <div class="split-visual grid-visual">
                     <div class="grid-card"><i class="fab fa-facebook-f"></i></div>
@@ -270,6 +198,39 @@
                     <div class="grid-card"><i class="fab fa-vk"></i></div>
                     <div class="grid-card"><i class="fab fa-behance"></i></div>
                     <div class="grid-card"><i class="fab fa-dribbble"></i></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="section-light differentiators-section">
+        <div class="container">
+            <div class="section-header center">
+                <span class="badge">Why Choose Us</span>
+                <h2>What makes us different?</h2>
+                <p>We simplify your communication stack with unique advantages that set us apart.</p>
+            </div>
+
+            <div class="smart-features-grid two-columns">
+                <!-- Feature 1 -->
+                <div class="smart-feature-card">
+                    <div class="icon-box">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <h3>No WhatsApp API Needed</h3>
+                    <p>Connect your WhatsApp account simply and directly. We've eliminated the need for complex official
+                        API approvals and setups, saving you time and technical headaches.</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="smart-feature-card">
+                    <div class="icon-box">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <h3>Connect All Platforms in One Place</h3>
+                    <p>Don't switch between apps. Manage WhatsApp, Telegram, Messenger, and 50+ other channels from a
+                        single, unified dashboard designed for productivity.</p>
                 </div>
             </div>
         </div>
@@ -551,7 +512,6 @@
                 <p>Join thousands of businesses using AiTextBotz today.</p>
                 <div class="cta-buttons">
                     <a href="https://app.aitextbotz.com/register" class="btn btn-lg btn-primary">Get Started Now</a>
-                    <a href="#" class="btn btn-lg btn-outline">Contact Sales</a>
                 </div>
             </div>
         </div>
@@ -560,74 +520,15 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-cta-box">
-                <div class="footer-cta-text">
-                    <h3>Stay in the loop</h3>
-                    <p>Join our newsletter for the latest updates and exclusive offers.</p>
-                </div>
-                <div class="footer-newsletter">
-                    <input type="email" placeholder="Enter your email">
-                    <button class="btn btn-primary">Subscribe</button>
-                </div>
-            </div>
-
             <div class="footer-top">
                 <div class="footer-brand">
                     <div class="footer-logo">
-                        <img src="assets/logo.png" alt="AiTextBotz" class="logo-img"
-                            onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+                        <img src="assets/img/logo.png" alt="AiTextBotz" class="logo-img"
+                            style="filter: brightness(0) invert(1);">
                         <span class="logo-text" style="display: none; color: white;">AiTextBotz</span>
                     </div>
                     <p>Reinventing customer communication with Artificial Intelligence. Build better relationships,
                         automatically.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-github"></i></a>
-                    </div>
-                </div>
-
-                <div class="footer-column">
-                    <h4>Product</h4>
-                    <ul>
-                        <li><a href="#">Features</a></li>
-                        <li><a href="#">Integrations</a></li>
-                        <li><a href="#">Pricing</a></li>
-                        <li><a href="#">Changelog</a></li>
-                        <li><a href="#">Documentation</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-column">
-                    <h4>Company</h4>
-                    <ul>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Careers</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Contact</a></li>
-                        <li><a href="#">Partners</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-column">
-                    <h4>Legal</h4>
-                    <ul>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms of Service</a></li>
-                        <li><a href="#">Cookie Policy</a></li>
-                        <li><a href="#">Security</a></li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="footer-bottom">
-                <p>&copy; 2026 AiTextBotz. All rights reserved.</p>
-                <div class="footer-bottom-links">
-                    <a href="#">Status</a>
-                    <span class="dot-separator">&bull;</span>
-                    <a href="#">Sitemap</a>
                 </div>
             </div>
         </div>

@@ -1,0 +1,15 @@
+<svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="400" rx="20" fill="#F1F5F9"/>
+  <!-- Chat Window -->
+  <rect x="50" y="50" width="300" height="300" rx="12" fill="white" stroke="#E2E8F0"/>
+  <rect x="50" y="50" width="300" height="60" rx="12" fill="#392C7B"/>
+  <rect x="50" y="100" width="300" height="10" fill="white"/> <!-- cover lower round -->
+  
+  <!-- Content -->
+  <rect x="70" y="140" width="180" height="40" rx="8" fill="#F8FAFC"/>
+  <rect x="150" y="200" width="180" height="40" rx="8" fill="#F2F2FF"/>
+  <rect x="70" y="260" width="120" height="40" rx="8" fill="#F8FAFC"/>
+  
+  <!-- Input -->
+  <line x1="50" y1="310" x2="350" y2="310" stroke="#E2E8F0"/>
+</svg>
