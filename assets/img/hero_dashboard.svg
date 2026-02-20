@@ -12,9 +12,9 @@
 <rect x="240" y="140" width="240" height="120" rx="12" fill="#F1F5F9"/>
 <rect x="520" y="140" width="240" height="120" rx="12" fill="#F1F5F9"/>
 <!-- Chat bubbles -->
-<rect x="240" y="300" width="300" height="60" rx="12" fill="#392C7B"/>
+<rect x="240" y="300" width="300" height="60" rx="12" fill="#7918bf"/>
 <rect x="460" y="380" width="300" height="40" rx="12" fill="#E2E8F0"/>
 <!-- Accents -->
-<circle cx="270" cy="170" r="20" fill="#4C4ECD"/>
+<circle cx="270" cy="170" r="20" fill="#9332d1"/>
 <circle cx="550" cy="170" r="20" fill="#10B981"/>
 </svg>

@@ -2,7 +2,7 @@
   <rect width="400" height="400" rx="20" fill="#F1F5F9"/>
   <!-- Chat Window -->
   <rect x="50" y="50" width="300" height="300" rx="12" fill="white" stroke="#E2E8F0"/>
-  <rect x="50" y="50" width="300" height="60" rx="12" fill="#392C7B"/>
+  <rect x="50" y="50" width="300" height="60" rx="12" fill="#7918bf"/>
   <rect x="50" y="100" width="300" height="10" fill="white"/> <!-- cover lower round -->
   
   <!-- Content -->
