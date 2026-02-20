@@ -4,266 +4,929 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AiTextBotz - AI Chatbot & Messaging Automation</title>
+    <title>AiTextBotz — AI-Powered Chatbot & Messaging Automation Platform</title>
     <meta name="description"
-        content="AiTextBotz - The ultimate AI-powered chatbot and messaging automation platform for your business. Enhance customer support and boost sales effortlessly.">
+        content="AiTextBotz is the ultimate AI-powered chatbot and messaging automation platform. Connect 50+ channels, automate support, and boost sales — no coding required.">
+    <meta name="keywords"
+        content="AI chatbot, messaging automation, customer support, WhatsApp bot, live chat, business texting">
+    <meta name="author" content="AiTextBotz">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="icon" href="img/favicon.png">
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="assets/img/favicon.png">
-    <!-- FontAwesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
 
-    <!-- Header -->
-    <header class="header">
+    <!-- ===== Preloader ===== -->
+    <div id="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-logo">
+                <img src="img/logo-1.png" alt="AiTextBotz">
+            </div>
+            <div class="preloader-bar">
+                <div class="preloader-progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== Animated Background Particles ===== -->
+    <canvas id="particles-canvas"></canvas>
+
+    <!-- ===== Header / Navigation ===== -->
+    <header class="header" id="header">
         <div class="container">
             <nav class="navbar">
-                <a href="#" class="logo">
-                    <img src="assets/img/logo-1.png" alt="AiTextBotz Logo" class="logo-img">
+                <a href="#" class="logo" id="logo">
+                    <img src="img/logo-1.png" alt="AiTextBotz Logo" class="logo-img">
                 </a>
-                <div class="nav-links">
-                    <a href="#features">Features</a>
-                    <a href="#channels">Channels</a>
-                    <a href="#forms">Forms</a>
-                    <a href="#integrations">Integrations</a>
-                    <a href="#faq">FAQ</a>
-                    <div class="header-cta pc-hidden"> <!-- Kept for mobile flow, but wait, usually we want one list -->
-                        <!-- Actually, just appending them as siblings or nested? 
-                             Let's just put them in the same container for flex handling -->
-                        <a href="https://app.aitextbotz.com/login" class="btn btn-secondary mobile-only-btn">Log In</a>
-                        <a href="https://app.aitextbotz.com/register" class="btn btn-primary mobile-only-btn">Get
-                            Started</a>
+                <div class="nav-links" id="navLinks">
+                    <a href="#features" class="nav-link">Features</a>
+                    <a href="#how-it-works" class="nav-link">How It Works</a>
+                    <a href="#channels" class="nav-link">Channels</a>
+                    <a href="#pricing" class="nav-link">Pricing</a>
+                    <a href="#faq" class="nav-link">FAQ</a>
+                    <div class="nav-cta-mobile">
+                        <a href="https://app.aitextbotz.com/login" class="btn btn-ghost">Log In</a>
+                        <a href="https://app.aitextbotz.com/register" class="btn btn-primary">Start Free Trial</a>
                     </div>
                 </div>
-                <div class="header-cta desktop-only">
-                    <a href="https://app.aitextbotz.com/login" class="btn btn-secondary">Log In</a>
-                    <a href="https://app.aitextbotz.com/register" class="btn btn-primary">Get Started</a>
+                <div class="nav-cta-desktop">
+                    <a href="https://app.aitextbotz.com/login" class="btn btn-ghost" id="loginBtn">Log In</a>
+                    <a href="https://app.aitextbotz.com/register" class="btn btn-primary" id="ctaBtn">Start Free
+                        Trial</a>
                 </div>
-                <div class="mobile-menu-toggle">
-                    <i class="fas fa-bars"></i>
-                </div>
+                <button class="hamburger" id="hamburger" aria-label="Toggle Navigation">
+                    <span></span><span></span><span></span>
+                </button>
             </nav>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container hero-container">
-            <div class="hero-content">
-                <span class="badge">New: GPT-4 Omni Integration</span>
-                <h1>Supercharge Your Customer Support with <span class="text-gradient">AiTextBotz</span></h1>
-                <p>Automate conversations, boost engagement, and drive sales 24/7 with our intelligent AI chatbot
-                    platform. No coding required.</p>
-                <div class="hero-buttons">
-                    <a href="https://app.aitextbotz.com/register" class="btn btn-primary btn-lg">Start Free Trial</a>
-                    <a href="https://app.aitextbotz.com/login" class="btn btn-outline btn-lg">Login</a>
+    <!-- ===== Hero Section ===== -->
+    <section class="hero" id="hero">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-content" data-animate="fade-right">
+                    <div class="hero-badge">
+                        <span class="badge-dot"></span>
+                        <span>New: GPT-4o Omni Integration Available</span>
+                    </div>
+                    <h1>Supercharge Your Customer Support with <span class="gradient-text">AI Automation</span></h1>
+                    <p class="hero-description">
+                        Automate conversations, boost engagement, and drive sales 24/7 with our intelligent AI chatbot
+                        platform. Connect 50+ channels in one unified inbox — no coding required.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="https://app.aitextbotz.com/register" class="btn btn-primary btn-lg" id="heroCtaBtn">
+                            <span>Get Started Free</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="#how-it-works" class="btn btn-outline btn-lg" id="heroLearnBtn">
+                            <i class="fas fa-play-circle"></i>
+                            <span>See How It Works</span>
+                        </a>
+                    </div>
+                    <div class="hero-trust">
+                        <div class="trust-avatars">
+                            <div class="avatar" style="background: linear-gradient(135deg, #7918bf, #d946ef);">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="avatar" style="background: linear-gradient(135deg, #f97316, #ec4899);">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="avatar" style="background: linear-gradient(135deg, #462e8d, #7918bf);">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="avatar" style="background: linear-gradient(135deg, #9332d1, #f97316);">
+                                <i class="fas fa-user"></i>
+                            </div>
+                        </div>
+                        <div class="trust-info">
+                            <div class="trust-stars">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <span>Trusted by <strong>500+</strong> businesses worldwide</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="trust-badges">
-                    <span>Trusted by 500+ businesses</span>
+                <div class="hero-visual" data-animate="fade-left">
+                    <div class="hero-mockup">
+                        <div class="mockup-glow"></div>
+                        <img src="img/hero-banner.webp" alt="AiTextBotz Dashboard Preview" class="hero-dashboard-img">
+                        <!-- Floating Elements -->
+                        <div class="float-card float-card-1">
+                            <div class="float-card-icon green">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div class="float-card-text">
+                                <strong>+240%</strong>
+                                <span>Response Rate</span>
+                            </div>
+                        </div>
+                        <div class="float-card float-card-2">
+                            <div class="float-card-icon purple">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <div class="float-card-text">
+                                <strong>AI Active</strong>
+                                <span>24/7 Support</span>
+                            </div>
+                        </div>
+                        <div class="float-card float-card-3">
+                            <div class="float-card-icon orange">
+                                <i class="fas fa-bolt"></i>
+                            </div>
+                            <div class="float-card-text">
+                                <strong>
+                                    < 2s</strong>
+                                        <span>Avg. Reply</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="hero-image">
-                <img src="assets/img/hero-banner.webp" alt="AiTextBotz Dashboard" class="hero-dashboard-img">
+        </div>
+        <div class="hero-wave">
+            <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+                <path
+                    d="M0,64 C180,100 360,20 540,64 C720,108 900,20 1080,64 C1260,108 1360,40 1440,64 L1440,120 L0,120 Z"
+                    fill="var(--bg-main)"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- ===== Logos / Social Proof Bar ===== -->
+    <section class="logos-bar">
+        <div class="container">
+            <p class="logos-label">Integrates seamlessly with your favorite tools</p>
+            <div class="logos-track">
+                <div class="logos-slide">
+                    <div class="logo-item"><i class="fab fa-whatsapp"></i><span>WhatsApp</span></div>
+                    <div class="logo-item"><i class="fab fa-telegram-plane"></i><span>Telegram</span></div>
+                    <div class="logo-item"><i class="fab fa-facebook-messenger"></i><span>Messenger</span></div>
+                    <div class="logo-item"><i class="fab fa-instagram"></i><span>Instagram</span></div>
+                    <div class="logo-item"><i class="fab fa-slack"></i><span>Slack</span></div>
+                    <div class="logo-item"><i class="fab fa-discord"></i><span>Discord</span></div>
+                    <div class="logo-item"><i class="fab fa-viber"></i><span>Viber</span></div>
+                    <div class="logo-item"><i class="fab fa-wordpress"></i><span>WordPress</span></div>
+                    <div class="logo-item"><i class="fab fa-shopify"></i><span>Shopify</span></div>
+                    <!-- Duplicate for infinite scroll -->
+                    <div class="logo-item"><i class="fab fa-whatsapp"></i><span>WhatsApp</span></div>
+                    <div class="logo-item"><i class="fab fa-telegram-plane"></i><span>Telegram</span></div>
+                    <div class="logo-item"><i class="fab fa-facebook-messenger"></i><span>Messenger</span></div>
+                    <div class="logo-item"><i class="fab fa-instagram"></i><span>Instagram</span></div>
+                    <div class="logo-item"><i class="fab fa-slack"></i><span>Slack</span></div>
+                    <div class="logo-item"><i class="fab fa-discord"></i><span>Discord</span></div>
+                    <div class="logo-item"><i class="fab fa-viber"></i><span>Viber</span></div>
+                    <div class="logo-item"><i class="fab fa-wordpress"></i><span>WordPress</span></div>
+                    <div class="logo-item"><i class="fab fa-shopify"></i><span>Shopify</span></div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Core Features Section -->
+    <!-- ===== Core Features Section ===== -->
     <section id="features" class="features-section">
         <div class="container">
-            <div class="section-header center">
-                <span class="subtitle">Why AiTextBotz?</span>
-                <h2>All-in-One Communication Platform</h2>
+            <div class="section-header" data-animate="fade-up">
+                <span class="chip">Why AiTextBotz?</span>
+                <h2>One Platform. <span class="gradient-text">Infinite Possibilities.</span></h2>
+                <p>Everything you need to deliver exceptional customer experiences at scale.</p>
             </div>
 
-            <div class="feature-cards">
+            <div class="features-grid">
                 <!-- Feature 1 -->
-                <div class="feature-card">
-                    <div class="feature-row">
-                        <div class="feature-text">
-                            <div class="icon-box">
-                                <i class="fas fa-globe"></i>
-                            </div>
-                            <h3>50+ Contact Channels</h3>
-                            <p>Let your customers contact you via their preferred messenger. WhatsApp, Viber, Telegram,
-                                and
-                                over 50 communication channels covered. Centralize all your conversations in one unified
-                                inbox.</p>
-                            <ul class="feature-list">
-                                <li><i class="fas fa-check"></i> Unified Inbox</li>
-                                <li><i class="fas fa-check"></i> Cross-channel history</li>
-                                <li><i class="fas fa-check"></i> Automatic routing</li>
-                            </ul>
-                        </div>
-                        <div class="feature-visual white-bg-visual">
-                            <img src="assets/img/50_Channel.webp" alt="Unified Inbox" class="feature-img">
-                        </div>
+                <div class="feature-card glass-card" data-animate="fade-up" data-delay="100">
+                    <div class="feature-icon-wrap gradient-1">
+                        <i class="fas fa-globe"></i>
                     </div>
+                    <h3>50+ Contact Channels</h3>
+                    <p>Let customers reach you on their preferred platform — WhatsApp, Telegram, Viber, and 50+ more,
+                        all in one unified inbox.</p>
+                    <ul class="feature-checklist">
+                        <li><i class="fas fa-check"></i> Unified Inbox</li>
+                        <li><i class="fas fa-check"></i> Cross-channel history</li>
+                        <li><i class="fas fa-check"></i> Automatic routing</li>
+                    </ul>
                 </div>
 
                 <!-- Feature 2 -->
-                <div class="feature-card">
-                    <div class="feature-row">
-                        <div class="feature-text">
-                            <div class="icon-box">
-                                <i class="fas fa-comments"></i>
-                            </div>
-                            <h3>Full-featured Live Chat</h3>
-                            <p>Our service provides a full-featured live chat widget that can help you to communicate
-                                with
-                                your customers instantly from your website. Includes file sharing, emojis, and agent
-                                transfer.</p>
-                            <ul class="feature-list">
-                                <li><i class="fas fa-check"></i> File sharing & Emojis</li>
-                                <li><i class="fas fa-check"></i> Agent Transfer support</li>
-                                <li><i class="fas fa-check"></i> Real-time typing indicators</li>
-                            </ul>
-                        </div>
-                        <div class="feature-visual white-bg-visual">
-                            <img src="assets/img/Contact-Channel.webp" alt="Live Chat" class="feature-img">
-                        </div>
+                <div class="feature-card glass-card" data-animate="fade-up" data-delay="200">
+                    <div class="feature-icon-wrap gradient-2">
+                        <i class="fas fa-comments"></i>
                     </div>
+                    <h3>Full-Featured Live Chat</h3>
+                    <p>Communicate with customers in real-time. Includes file sharing, emojis, canned responses, and
+                        seamless agent transfer.</p>
+                    <ul class="feature-checklist">
+                        <li><i class="fas fa-check"></i> File sharing & Emojis</li>
+                        <li><i class="fas fa-check"></i> Agent Transfer support</li>
+                        <li><i class="fas fa-check"></i> Real-time typing indicators</li>
+                    </ul>
                 </div>
 
                 <!-- Feature 3 -->
-                <div class="feature-card">
-                    <div class="feature-row">
-                        <div class="feature-text">
-                            <div class="icon-box">
-                                <i class="fas fa-paint-brush"></i>
-                            </div>
-                            <h3>Fully-customizable Widget</h3>
-                            <p>Customize your widget color, style, icons, animation, and position to fit your branding.
-                                You
-                                can set it up separately for desktop and mobile devices to ensure a perfect user
-                                experience.
-                            </p>
-                            <ul class="feature-list">
-                                <li><i class="fas fa-check"></i> Customizable colors & branding</li>
-                                <li><i class="fas fa-check"></i> Device-specific settings</li>
-                                <li><i class="fas fa-check"></i> Flexible Widget positioning</li>
-                            </ul>
-                        </div>
-                        <div class="feature-visual white-bg-visual">
-                            <img src="assets/img/feature_custom.svg" alt="Custom Widget" class="feature-img">
-                        </div>
+                <div class="feature-card glass-card" data-animate="fade-up" data-delay="300">
+                    <div class="feature-icon-wrap gradient-3">
+                        <i class="fas fa-paint-brush"></i>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Messengers & Socials Section -->
-    <section id="channels" class="section-light">
-        <div class="container">
-            <div class="split-section">
-                <div class="split-text">
-                    <span class="subtitle">Messengers</span>
-                    <h2>Connect on Every Messenger</h2>
-                    <p>Make it easy for your visitors to communicate in the way they prefer. Choose the channels that
-                        can help you convert visitors into customers.</p>
-
-                </div>
-                <div class="split-visual grid-visual">
-                    <div class="grid-card"><i class="fab fa-whatsapp"></i></div>
-                    <div class="grid-card"><i class="fab fa-facebook-messenger"></i></div>
-                    <div class="grid-card"><i class="fab fa-viber"></i></div>
-                    <div class="grid-card"><i class="fab fa-telegram"></i></div>
-                    <div class="grid-card"><i class="fab fa-skype"></i></div>
-                    <div class="grid-card"><i class="fab fa-discord"></i></div>
-                    <div class="grid-card"><i class="fab fa-slack"></i></div>
-                    <div class="grid-card"><i class="fas fa-comment-dots"></i></div>
-                </div>
-            </div>
-
-            <div class="divider"></div>
-
-            <div class="split-section reverse">
-                <div class="split-text">
-                    <span class="subtitle">Social Networks</span>
-                    <h2>Expand Your Social Reach</h2>
-                    <p>Connect with audiences on a variety of social networks. Whether you prefer the visual focus of
-                        Instagram or professional networking of LinkedIn.</p>
-                </div>
-                <div class="split-visual grid-visual">
-                    <div class="grid-card"><i class="fab fa-facebook-f"></i></div>
-                    <div class="grid-card"><i class="fab fa-instagram"></i></div>
-                    <div class="grid-card"><i class="fab fa-twitter"></i></div>
-                    <div class="grid-card"><i class="fab fa-linkedin-in"></i></div>
-                    <div class="grid-card"><i class="fab fa-youtube"></i></div>
-                    <div class="grid-card"><i class="fab fa-vk"></i></div>
-                    <div class="grid-card"><i class="fab fa-behance"></i></div>
-                    <div class="grid-card"><i class="fab fa-dribbble"></i></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Why Choose Us Section -->
-    <section class="section-light differentiators-section">
-        <div class="container">
-            <div class="section-header center">
-                <span class="badge">Why Choose Us</span>
-                <h2>What makes us different?</h2>
-                <p>We simplify your communication stack with unique advantages that set us apart.</p>
-            </div>
-
-            <div class="smart-features-grid two-columns">
-                <!-- Feature 1 -->
-                <div class="smart-feature-card">
-                    <div class="icon-box">
-                        <i class="fab fa-whatsapp"></i>
-                    </div>
-                    <h3>No WhatsApp API Needed</h3>
-                    <p>Connect your WhatsApp account simply and directly. We've eliminated the need for complex official
-                        API approvals and setups, saving you time and technical headaches.</p>
-                </div>
-
-                <!-- Feature 2 -->
-                <div class="smart-feature-card">
-                    <div class="icon-box">
-                        <i class="fas fa-sync-alt"></i>
-                    </div>
-                    <h3>Connect All Platforms in One Place</h3>
-                    <p>Don't switch between apps. Manage WhatsApp, Telegram, Messenger, and 50+ other channels from a
-                        single, unified dashboard designed for productivity.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-
-    <!-- Live Chat System -->
-    <section class="live-chat">
-        <div class="container">
-            <div class="split-section">
-                <div class="split-text">
-                    <span class="subtitle">Live Chat System</span>
-                    <h2>Build Your Own Support Team</h2>
-                    <p>With chat agent functionality, you can add agents to handle all incoming live chat messages.</p>
-                    <ul class="feature-check-list">
-                        <li>Each chat agent gets their own dashboard</li>
-                        <li>Handle and reply to messages instantly</li>
-                        <li><strong>Telegram Gateway:</strong> Receive and reply to incoming messages directly from the
-                            Telegram app</li>
+                    <h3>Customizable Widget</h3>
+                    <p>Customize colors, styles, icons, animations, and positioning to match your branding for both
+                        desktop and mobile.</p>
+                    <ul class="feature-checklist">
+                        <li><i class="fas fa-check"></i> Custom colors & branding</li>
+                        <li><i class="fas fa-check"></i> Device-specific settings</li>
+                        <li><i class="fas fa-check"></i> Flexible positioning</li>
                     </ul>
                 </div>
-                <div class="split-visual">
-                    <!-- Abstract representation of chat dashboard -->
-                    <div class="chat-dashboard-mockup">
-                        <div class="cd-sidebar">
-                            <div class="cd-avatar"></div>
-                            <div class="cd-avatar"></div>
-                            <div class="cd-avatar"></div>
+
+                <!-- Feature 4 -->
+                <div class="feature-card glass-card" data-animate="fade-up" data-delay="400">
+                    <div class="feature-icon-wrap gradient-4">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>AI-Powered Chatbot</h3>
+                    <p>Build intelligent conversations with our GPT-4o powered chatbot. Automate support, qualify leads,
+                        and close deals — 24/7.</p>
+                    <ul class="feature-checklist">
+                        <li><i class="fas fa-check"></i> GPT-4o integration</li>
+                        <li><i class="fas fa-check"></i> Visual flow builder</li>
+                        <li><i class="fas fa-check"></i> No coding required</li>
+                    </ul>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="feature-card glass-card" data-animate="fade-up" data-delay="500">
+                    <div class="feature-icon-wrap gradient-5">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Advanced Analytics</h3>
+                    <p>Track performance with detailed reports on conversations, response times, agent productivity, and
+                        customer satisfaction.</p>
+                    <ul class="feature-checklist">
+                        <li><i class="fas fa-check"></i> Real-time dashboards</li>
+                        <li><i class="fas fa-check"></i> Conversion tracking</li>
+                        <li><i class="fas fa-check"></i> Team performance</li>
+                    </ul>
+                </div>
+
+                <!-- Feature 6 -->
+                <div class="feature-card glass-card" data-animate="fade-up" data-delay="600">
+                    <div class="feature-icon-wrap gradient-6">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Enterprise Security</h3>
+                    <p>Bank-grade security with AES-256 encryption, GDPR compliance, role-based access, and complete
+                        data isolation.</p>
+                    <ul class="feature-checklist">
+                        <li><i class="fas fa-check"></i> AES-256 encryption</li>
+                        <li><i class="fas fa-check"></i> GDPR compliant</li>
+                        <li><i class="fas fa-check"></i> Role-based access</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== How It Works (Setup Steps) ===== -->
+    <section id="how-it-works" class="how-it-works-section">
+        <div class="container">
+            <div class="section-header" data-animate="fade-up">
+                <span class="chip">Quick Setup</span>
+                <h2>Up & Running in <span class="gradient-text">3 Simple Steps</span></h2>
+                <p>Get started in minutes, not days. No technical expertise required.</p>
+            </div>
+
+            <div class="steps-timeline">
+                <div class="timeline-line"></div>
+
+                <!-- Step 1 -->
+                <div class="step-item" data-animate="fade-right" data-delay="100">
+                    <div class="step-number">
+                        <span>01</span>
+                    </div>
+                    <div class="step-card glass-card">
+                        <div class="step-icon">
+                            <i class="fas fa-user-plus"></i>
                         </div>
-                        <div class="cd-main">
-                            <div class="cd-msg-bubble">New support request received</div>
-                            <div class="cd-reply-box">Reply...</div>
+                        <div class="step-content">
+                            <h3>Create Your Account</h3>
+                            <p>Sign up in 30 seconds with your email. No credit card required. Get instant access to
+                                your dashboard and all features during the 14-day free trial.</p>
+                            <div class="step-tag">
+                                <i class="fas fa-clock"></i>
+                                <span>30 seconds</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="step-item" data-animate="fade-left" data-delay="200">
+                    <div class="step-number">
+                        <span>02</span>
+                    </div>
+                    <div class="step-card glass-card">
+                        <div class="step-icon">
+                            <i class="fas fa-plug"></i>
+                        </div>
+                        <div class="step-content">
+                            <h3>Connect Your Channels</h3>
+                            <p>Link your WhatsApp, Telegram, Messenger, Instagram, and more — all without complex API
+                                setups. Just scan a QR code or paste your token.</p>
+                            <div class="step-tag">
+                                <i class="fas fa-link"></i>
+                                <span>2 minutes per channel</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="step-item" data-animate="fade-right" data-delay="300">
+                    <div class="step-number">
+                        <span>03</span>
+                    </div>
+                    <div class="step-card glass-card">
+                        <div class="step-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <div class="step-content">
+                            <h3>Launch & Automate</h3>
+                            <p>Embed the chat widget on your website, configure AI auto-replies, set up chatbot flows,
+                                and start automating conversations instantly.</p>
+                            <div class="step-tag">
+                                <i class="fas fa-bolt"></i>
+                                <span>Go live today</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="steps-cta" data-animate="fade-up">
+                <a href="https://app.aitextbotz.com/register" class="btn btn-primary btn-lg">
+                    <span>Start Your Free Trial</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+                <span class="steps-cta-note">No credit card required • 14-day free trial • Cancel anytime</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Channels & Social Section (Infographic) ===== -->
+    <section id="channels" class="channels-section">
+        <div class="container">
+            <div class="section-header" data-animate="fade-up">
+                <span class="chip">Omnichannel</span>
+                <h2>Every Channel. <span class="gradient-text">One Dashboard.</span></h2>
+                <p>Connect with your customers wherever they are — messengers, social networks, email, SMS, and website
+                    platforms — all managed from a single unified inbox.</p>
+            </div>
+
+            <!-- Stats Bar -->
+            <div class="channel-stats" data-animate="fade-up">
+                <div class="channel-stat">
+                    <div class="stat-number" data-count="50">50+</div>
+                    <div class="stat-label">Supported Channels</div>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="channel-stat">
+                    <div class="stat-number">100k+</div>
+                    <div class="stat-label">Users Reachable</div>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="channel-stat">
+                    <div class="stat-number">1</div>
+                    <div class="stat-label">Unified Inbox</div>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="channel-stat">
+                    <div class="stat-number">&lt;5 min</div>
+                    <div class="stat-label">Setup Per Channel</div>
+                </div>
+            </div>
+
+            <!-- Central Hub Infographic -->
+            <div class="infographic-hub" data-animate="fade-up">
+                <div class="hub-center">
+                    <div class="hub-circle">
+                        <div class="hub-icon"><i class="fas fa-inbox"></i></div>
+                        <span>Unified<br>Inbox</span>
+                    </div>
+                    <div class="hub-pulse-ring"></div>
+                    <div class="hub-pulse-ring ring-2"></div>
+                </div>
+                <div class="hub-connectors">
+                    <div class="connector-line line-left"></div>
+                    <div class="connector-line line-right"></div>
+                    <div class="connector-line line-top"></div>
+                </div>
+            </div>
+
+            <!-- Channel Groups (Infographic Cards) -->
+            <div class="infographic-channels">
+
+                <!-- Messengers Group -->
+                <div class="channel-info-group" data-animate="fade-up" data-delay="100">
+                    <div class="channel-group-header">
+                        <div class="channel-group-badge gradient-1">
+                            <i class="fas fa-paper-plane"></i>
+                        </div>
+                        <div>
+                            <h3>Instant Messengers</h3>
+                            <p class="channel-group-desc">Connect with 100k+ users on the world's most popular messaging
+                                apps. Receive and reply to messages from WhatsApp, Telegram, Messenger, and more —
+                                directly from your dashboard.</p>
+                        </div>
+                    </div>
+                    <div class="channel-detail-grid">
+                        <div class="channel-detail-card">
+                            <i class="fab fa-whatsapp" style="color:#25D366;"></i>
+                            <div class="channel-detail-info">
+                                <strong>WhatsApp</strong>
+                                <span>No API required. Scan QR & connect instantly.</span>
+                            </div>
+                        </div>
+                        <div class="channel-detail-card">
+                            <i class="fab fa-facebook-messenger" style="color:#0084FF;"></i>
+                            <div class="channel-detail-info">
+                                <strong>Messenger</strong>
+                                <span>Manage Facebook page chats in real time.</span>
+                            </div>
+                        </div>
+                        <div class="channel-detail-card">
+                            <i class="fab fa-telegram-plane" style="color:#0088cc;"></i>
+                            <div class="channel-detail-info">
+                                <strong>Telegram</strong>
+                                <span>Bot integration + gateway for direct replies.</span>
+                            </div>
+                        </div>
+                        <div class="channel-detail-card">
+                            <i class="fab fa-viber" style="color:#7360f2;"></i>
+                            <div class="channel-detail-info">
+                                <strong>Viber</strong>
+                                <span>Reach millions of Viber users directly.</span>
+                            </div>
+                        </div>
+                        <div class="channel-detail-card">
+                            <i class="fab fa-skype" style="color:#00aff0;"></i>
+                            <div class="channel-detail-info">
+                                <strong>Skype</strong>
+                                <span>Business communication made easy.</span>
+                            </div>
+                        </div>
+                        <div class="channel-detail-card">
+                            <i class="fab fa-discord" style="color:#5865F2;"></i>
+                            <div class="channel-detail-info">
+                                <strong>Discord</strong>
+                                <span>Community support & engagement.</span>
+                            </div>
+                        </div>
+                        <div class="channel-detail-card">
+                            <i class="fab fa-slack" style="color:#4A154B;"></i>
+                            <div class="channel-detail-info">
+                                <strong>Slack</strong>
+                                <span>Internal team + customer workspace.</span>
+                            </div>
+                        </div>
+                        <div class="channel-detail-card">
+                            <i class="fab fa-line" style="color:#00B900;"></i>
+                            <div class="channel-detail-info">
+                                <strong>LINE</strong>
+                                <span>Popular in Asia — 200M+ users.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Social Networks Group -->
+                <div class="channel-info-group" data-animate="fade-up" data-delay="200">
+                    <div class="channel-group-header">
+                        <div class="channel-group-badge gradient-2">
+                            <i class="fas fa-share-alt"></i>
+                        </div>
+                        <div>
+                            <h3>Social Networks</h3>
+                            <p class="channel-group-desc">Engage your audience across every major social platform.
+                                Monitor comments, DMs, and mentions — and reply from one centralized inbox without
+                                switching between apps.</p>
+                        </div>
+                    </div>
+                    <div class="channel-detail-grid">
+                        <div class="channel-detail-card">
+                            <i class="fab fa-facebook-f" style="color:#1877F2;"></i>
+                            <div class="channel-detail-info">
+                                <strong>Facebook</strong>
+                                <span>Page messages, comments & ads.</span>
+                            </div>
+                        </div>
+                        <div class="channel-detail-card">
+                            <i class="fab fa-instagram" style="color:#E4405F;"></i>
+                            <div class="channel-detail-info">
+                                <strong>Instagram</strong>
+                                <span>DMs, story replies & comment tracking.</span>
+                            </div>
+                        </div>
+                        <div class="channel-detail-card">
+                            <i class="fab fa-twitter" style="color:#1DA1F2;"></i>
+                            <div class="channel-detail-info">
+                                <strong>Twitter / X</strong>
+                                <span>DMs and mention monitoring.</span>
+                            </div>
+                        </div>
+                        <div class="channel-detail-card">
+                            <i class="fab fa-linkedin-in" style="color:#0A66C2;"></i>
+                            <div class="channel-detail-info">
+                                <strong>LinkedIn</strong>
+                                <span>Professional networking & B2B leads.</span>
+                            </div>
+                        </div>
+                        <div class="channel-detail-card">
+                            <i class="fab fa-youtube" style="color:#FF0000;"></i>
+                            <div class="channel-detail-info">
+                                <strong>YouTube</strong>
+                                <span>Comment management & engagement.</span>
+                            </div>
+                        </div>
+                        <div class="channel-detail-card">
+                            <i class="fab fa-tiktok" style="color:#010101;"></i>
+                            <div class="channel-detail-info">
+                                <strong>TikTok</strong>
+                                <span>Engage Gen-Z & viral audiences.</span>
+                            </div>
+                        </div>
+                        <div class="channel-detail-card">
+                            <i class="fab fa-pinterest-p" style="color:#E60023;"></i>
+                            <div class="channel-detail-info">
+                                <strong>Pinterest</strong>
+                                <span>Visual discovery & product pins.</span>
+                            </div>
+                        </div>
+                        <div class="channel-detail-card">
+                            <i class="fab fa-vk" style="color:#4680C2;"></i>
+                            <div class="channel-detail-info">
+                                <strong>VKontakte</strong>
+                                <span>Russia & CIS region engagement.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CMS & Platforms Group -->
+                <div class="channel-info-group" data-animate="fade-up" data-delay="300">
+                    <div class="channel-group-header">
+                        <div class="channel-group-badge gradient-4">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <div>
+                            <h3>CMS & Website Platforms</h3>
+                            <p class="channel-group-desc">Embed the AiTextBotz chat widget on any website with a single
+                                line of code, or use our dedicated plugins for popular CMS platforms. Works everywhere.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="channel-detail-grid">
+                        <div class="channel-detail-card">
+                            <i class="fab fa-wordpress" style="color:#21759B;"></i>
+                            <div class="channel-detail-info">
+                                <strong>WordPress</strong>
+                                <span>Dedicated plugin — install in 1 click.</span>
+                            </div>
+                        </div>
+                        <div class="channel-detail-card">
+                            <i class="fab fa-shopify" style="color:#96BF48;"></i>
+                            <div class="channel-detail-info">
+                                <strong>Shopify</strong>
+                                <span>E-commerce live chat & order support.</span>
+                            </div>
+                        </div>
+                        <div class="channel-detail-card">
+                            <i class="fab fa-wix" style="color:#0C6EFC;"></i>
+                            <div class="channel-detail-info">
+                                <strong>Wix</strong>
+                                <span>Drag-and-drop integration.</span>
+                            </div>
+                        </div>
+                        <div class="channel-detail-card">
+                            <i class="fab fa-joomla" style="color:#5091CD;"></i>
+                            <div class="channel-detail-info">
+                                <strong>Joomla</strong>
+                                <span>Extension-based easy setup.</span>
+                            </div>
+                        </div>
+                        <div class="channel-detail-card">
+                            <i class="fab fa-magento" style="color:#EE672F;"></i>
+                            <div class="channel-detail-info">
+                                <strong>Magento</strong>
+                                <span>Enterprise e-commerce support.</span>
+                            </div>
+                        </div>
+                        <div class="channel-detail-card">
+                            <i class="fab fa-opencart" style="color:#23D2BE;"></i>
+                            <div class="channel-detail-info">
+                                <strong>OpenCart</strong>
+                                <span>Shopping cart live assistance.</span>
+                            </div>
+                        </div>
+                        <div class="channel-detail-card">
+                            <i class="fab fa-squarespace" style="color:#121212;"></i>
+                            <div class="channel-detail-info">
+                                <strong>Squarespace</strong>
+                                <span>Code injection embed support.</span>
+                            </div>
+                        </div>
+                        <div class="channel-detail-card">
+                            <i class="fas fa-code" style="color:var(--primary);"></i>
+                            <div class="channel-detail-info">
+                                <strong>Custom / HTML</strong>
+                                <span>Embed code works on any website.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- How It All Connects Banner -->
+            <div class="channel-connect-banner glass-card" data-animate="fade-up">
+                <div class="connect-banner-visual">
+                    <div class="connect-flow">
+                        <div class="connect-node">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <div class="connect-arrow"><i class="fas fa-long-arrow-alt-right"></i></div>
+                        <div class="connect-node node-hub">
+                            <i class="fas fa-inbox"></i>
+                        </div>
+                        <div class="connect-arrow"><i class="fas fa-long-arrow-alt-right"></i></div>
+                        <div class="connect-node">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div class="connect-arrow"><i class="fas fa-long-arrow-alt-right"></i></div>
+                        <div class="connect-node">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                    </div>
+                    <div class="connect-labels">
+                        <span>Any Channel</span>
+                        <span></span>
+                        <span>Unified Inbox</span>
+                        <span></span>
+                        <span>AI Chatbot</span>
+                        <span></span>
+                        <span>Human Agent</span>
+                    </div>
+                </div>
+                <div class="connect-banner-text">
+                    <h4>How It All Connects</h4>
+                    <p>Messages from <strong>any channel</strong> flow into your <strong>unified inbox</strong>. The
+                        <strong>AI chatbot</strong> handles routine queries instantly. Complex issues are seamlessly
+                        transferred to <strong>human agents</strong> with full conversation history.
+                    </p>
+                    <a href="https://app.aitextbotz.com/register" class="btn btn-primary">
+                        <span>Connect Your First Channel</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Why Choose Us Section (Infographic) ===== -->
+    <section class="differentiators-section">
+        <div class="container">
+            <div class="section-header" data-animate="fade-up">
+                <span class="chip">Competitive Edge</span>
+                <h2>What Makes Us <span class="gradient-text">Different?</span></h2>
+                <p>Unlike other platforms, AiTextBotz removes complexity and delivers powerful automation with zero
+                    technical barriers.</p>
+            </div>
+
+            <!-- Comparison Stats -->
+            <div class="diff-comparison-bar" data-animate="fade-up">
+                <div class="comp-item">
+                    <div class="comp-icon"><i class="fas fa-clock"></i></div>
+                    <div class="comp-text">
+                        <strong>5 min setup</strong>
+                        <span>vs. hours with competitors</span>
+                    </div>
+                </div>
+                <div class="comp-divider"></div>
+                <div class="comp-item">
+                    <div class="comp-icon"><i class="fas fa-dollar-sign"></i></div>
+                    <div class="comp-text">
+                        <strong>No hidden fees</strong>
+                        <span>Transparent pricing always</span>
+                    </div>
+                </div>
+                <div class="comp-divider"></div>
+                <div class="comp-item">
+                    <div class="comp-icon"><i class="fas fa-code"></i></div>
+                    <div class="comp-text">
+                        <strong>Zero coding</strong>
+                        <span>No developers needed</span>
+                    </div>
+                </div>
+                <div class="comp-divider"></div>
+                <div class="comp-item">
+                    <div class="comp-icon"><i class="fas fa-headset"></i></div>
+                    <div class="comp-text">
+                        <strong>24/7 Support</strong>
+                        <span>AI + human assistance</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Infographic Differentiator Cards -->
+            <div class="diff-infographic-grid">
+
+                <!-- Card 1: No WhatsApp API -->
+                <div class="diff-info-card" data-animate="fade-up" data-delay="100">
+                    <div class="diff-info-header">
+                        <div class="diff-badge-icon" style="background: linear-gradient(135deg, #25D366, #128C7E);">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <div class="diff-badge-label">
+                            <span class="diff-tag">Exclusive</span>
+                        </div>
+                    </div>
+                    <h3>No WhatsApp API Needed</h3>
+                    <p class="diff-desc">Unlike competitors that require costly WhatsApp Business API approval and
+                        developer setup, AiTextBotz lets you connect your WhatsApp account directly by scanning a QR
+                        code — just like WhatsApp Web.</p>
+                    <div class="diff-highlights">
+                        <div class="diff-highlight">
+                            <i class="fas fa-qrcode"></i>
+                            <span>Scan QR code to connect</span>
+                        </div>
+                        <div class="diff-highlight">
+                            <i class="fas fa-ban"></i>
+                            <span>No API approval required</span>
+                        </div>
+                        <div class="diff-highlight">
+                            <i class="fas fa-bolt"></i>
+                            <span>Live in under 2 minutes</span>
+                        </div>
+                        <div class="diff-highlight">
+                            <i class="fas fa-money-bill-wave"></i>
+                            <span>No per-message charges</span>
+                        </div>
+                    </div>
+                    <div class="diff-vs-badge">
+                        <div class="vs-side vs-us"><strong>AiTextBotz</strong> <span>QR Scan → Done</span></div>
+                        <div class="vs-divider">VS</div>
+                        <div class="vs-side vs-them"><strong>Others</strong> <span>API Key → Approval → Setup</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2: All Platforms in One Place -->
+                <div class="diff-info-card" data-animate="fade-up" data-delay="200">
+                    <div class="diff-info-header">
+                        <div class="diff-badge-icon" style="background: var(--gradient-purple);">
+                            <i class="fas fa-layer-group"></i>
+                        </div>
+                        <div class="diff-badge-label">
+                            <span class="diff-tag">All-in-One</span>
+                        </div>
+                    </div>
+                    <h3>All Platforms in One Place</h3>
+                    <p class="diff-desc">Stop juggling multiple dashboards. AiTextBotz unifies WhatsApp, Telegram,
+                        Messenger, Instagram, Discord, Slack, and 50+ additional channels into a single powerful inbox —
+                        one login, total control.</p>
+                    <div class="diff-highlights">
+                        <div class="diff-highlight">
+                            <i class="fas fa-inbox"></i>
+                            <span>Single unified inbox</span>
+                        </div>
+                        <div class="diff-highlight">
+                            <i class="fas fa-history"></i>
+                            <span>Cross-channel chat history</span>
+                        </div>
+                        <div class="diff-highlight">
+                            <i class="fas fa-random"></i>
+                            <span>Smart auto-routing</span>
+                        </div>
+                        <div class="diff-highlight">
+                            <i class="fas fa-users-cog"></i>
+                            <span>Team assignment rules</span>
+                        </div>
+                    </div>
+                    <div class="diff-channel-strip">
+                        <div class="strip-icon" style="color:#25D366;"><i class="fab fa-whatsapp"></i></div>
+                        <div class="strip-icon" style="color:#0088cc;"><i class="fab fa-telegram-plane"></i></div>
+                        <div class="strip-icon" style="color:#0084FF;"><i class="fab fa-facebook-messenger"></i></div>
+                        <div class="strip-icon" style="color:#E4405F;"><i class="fab fa-instagram"></i></div>
+                        <div class="strip-icon" style="color:#5865F2;"><i class="fab fa-discord"></i></div>
+                        <div class="strip-icon" style="color:#4A154B;"><i class="fab fa-slack"></i></div>
+                        <div class="strip-more">+44</div>
+                    </div>
+                </div>
+
+                <!-- Card 3: GPT-4o AI Engine -->
+                <div class="diff-info-card" data-animate="fade-up" data-delay="300">
+                    <div class="diff-info-header">
+                        <div class="diff-badge-icon" style="background: var(--gradient-deep);">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <div class="diff-badge-label">
+                            <span class="diff-tag">AI Powered</span>
+                        </div>
+                    </div>
+                    <h3>GPT-4o AI Engine</h3>
+                    <p class="diff-desc">Powered by OpenAI's latest GPT-4o model, our chatbot delivers context-aware,
+                        multi-language conversations that understand intent, not just keywords. Train it on your own
+                        data for personalized responses.</p>
+                    <div class="diff-highlights">
+                        <div class="diff-highlight">
+                            <i class="fas fa-language"></i>
+                            <span>95+ languages supported</span>
+                        </div>
+                        <div class="diff-highlight">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>Train on your own data</span>
+                        </div>
+                        <div class="diff-highlight">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <span>Sub-2 second responses</span>
+                        </div>
+                        <div class="diff-highlight">
+                            <i class="fas fa-project-diagram"></i>
+                            <span>Visual flow builder</span>
+                        </div>
+                    </div>
+                    <div class="diff-ai-metrics">
+                        <div class="ai-metric">
+                            <div class="ai-metric-value">98%</div>
+                            <div class="ai-metric-label">Accuracy</div>
+                        </div>
+                        <div class="ai-metric">
+                            <div class="ai-metric-value">&lt;2s</div>
+                            <div class="ai-metric-label">Response</div>
+                        </div>
+                        <div class="ai-metric">
+                            <div class="ai-metric-value">24/7</div>
+                            <div class="ai-metric-label">Uptime</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4: Live Agent Handoff -->
+                <div class="diff-info-card" data-animate="fade-up" data-delay="400">
+                    <div class="diff-info-header">
+                        <div class="diff-badge-icon" style="background: var(--gradient-orange);">
+                            <i class="fas fa-exchange-alt"></i>
+                        </div>
+                        <div class="diff-badge-label">
+                            <span class="diff-tag">Seamless</span>
+                        </div>
+                    </div>
+                    <h3>Seamless AI → Human Handoff</h3>
+                    <p class="diff-desc">When conversations need a personal touch, AiTextBotz seamlessly transfers from
+                        AI to a human agent — with full context, chat history, and customer data intact. No repeated
+                        questions, no lost context.</p>
+                    <div class="diff-highlights">
+                        <div class="diff-highlight">
+                            <i class="fas fa-exchange-alt"></i>
+                            <span>One-click agent transfer</span>
+                        </div>
+                        <div class="diff-highlight">
+                            <i class="fas fa-history"></i>
+                            <span>Full conversation context</span>
+                        </div>
+                        <div class="diff-highlight">
+                            <i class="fas fa-bell"></i>
+                            <span>Real-time notifications</span>
+                        </div>
+                        <div class="diff-highlight">
+                            <i class="fas fa-chart-pie"></i>
+                            <span>Agent performance tracking</span>
+                        </div>
+                    </div>
+                    <div class="diff-handoff-flow">
+                        <div class="handoff-step">
+                            <div class="handoff-node" style="background: var(--gradient-purple);"><i
+                                    class="fas fa-robot"></i></div>
+                            <span>AI Handles</span>
+                        </div>
+                        <div class="handoff-arrow"><i class="fas fa-chevron-right"></i><i
+                                class="fas fa-chevron-right"></i></div>
+                        <div class="handoff-step">
+                            <div class="handoff-node" style="background: var(--gradient-orange);"><i
+                                    class="fas fa-exclamation-circle"></i></div>
+                            <span>Complex Query</span>
+                        </div>
+                        <div class="handoff-arrow"><i class="fas fa-chevron-right"></i><i
+                                class="fas fa-chevron-right"></i></div>
+                        <div class="handoff-step">
+                            <div class="handoff-node" style="background: linear-gradient(135deg, #10b981, #34d399);"><i
+                                    class="fas fa-headset"></i></div>
+                            <span>Human Takes Over</span>
                         </div>
                     </div>
                 </div>
@@ -271,268 +934,682 @@
         </div>
     </section>
 
-    <!-- Built-in Forms -->
-    <section id="forms" class="section-light">
+    <!-- ===== Live Chat System Showcase (Infographic) ===== -->
+    <section class="livechat-section">
         <div class="container">
-            <div class="section-header center">
-                <span class="subtitle">Data Collection</span>
-                <h2>Built-in Forms</h2>
-                <p>Gather data, leads, and feedback without users leaving the page.</p>
+            <div class="section-header" data-animate="fade-up">
+                <span class="chip">Live Chat System</span>
+                <h2>Build Your Own <span class="gradient-text">Support Team</span></h2>
+                <p>Add unlimited chat agents, assign conversations intelligently, and deliver real-time human support —
+                    all from one unified platform integrated with every channel.</p>
             </div>
-            <div class="forms-grid">
-                <div class="form-card">
-                    <div class="form-icon"><i class="fas fa-comment-medical"></i></div>
-                    <h3>Feedback Form</h3>
-                    <p>Gather customer feedback seamlessly. Share entries through email, Telegram, or webhook.</p>
+
+            <!-- Live Chat Stats Bar -->
+            <div class="livechat-stats" data-animate="fade-up">
+                <div class="lc-stat">
+                    <div class="lc-stat-icon"><i class="fas fa-users"></i></div>
+                    <div>
+                        <strong>Unlimited</strong>
+                        <span>Chat Agents</span>
+                    </div>
                 </div>
-                <div class="form-card">
-                    <div class="form-icon"><i class="fas fa-envelope-open-text"></i></div>
+                <div class="lc-stat-divider"></div>
+                <div class="lc-stat">
+                    <div class="lc-stat-icon"><i class="fas fa-bolt"></i></div>
+                    <div>
+                        <strong>&lt;3s</strong>
+                        <span>Avg. Response</span>
+                    </div>
+                </div>
+                <div class="lc-stat-divider"></div>
+                <div class="lc-stat">
+                    <div class="lc-stat-icon"><i class="fas fa-chart-line"></i></div>
+                    <div>
+                        <strong>Real-Time</strong>
+                        <span>Analytics</span>
+                    </div>
+                </div>
+                <div class="lc-stat-divider"></div>
+                <div class="lc-stat">
+                    <div class="lc-stat-icon"><i class="fas fa-shield-alt"></i></div>
+                    <div>
+                        <strong>End-to-End</strong>
+                        <span>Encryption</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Live Chat Feature Cards -->
+            <div class="livechat-features-grid" data-animate="fade-up">
+
+                <!-- Agent Dashboard Card -->
+                <div class="lc-feature-card">
+                    <div class="lc-feature-header">
+                        <div class="lc-feature-badge" style="background: var(--gradient-purple);">
+                            <i class="fas fa-tachometer-alt"></i>
+                        </div>
+                        <span class="diff-tag">Core Feature</span>
+                    </div>
+                    <h3>Dedicated Agent Dashboard</h3>
+                    <p>Every agent gets their own personal dashboard with real-time conversation feeds, customer context
+                        cards, and quick response templates — no training needed.</p>
+                    <div class="lc-feature-highlights">
+                        <div class="lc-highlight"><i class="fas fa-check-circle"></i> Personal workspace per agent</div>
+                        <div class="lc-highlight"><i class="fas fa-check-circle"></i> Customer info sidebar</div>
+                        <div class="lc-highlight"><i class="fas fa-check-circle"></i> Canned response templates</div>
+                        <div class="lc-highlight"><i class="fas fa-check-circle"></i> Conversation tagging</div>
+                    </div>
+                </div>
+
+                <!-- Smart Routing Card -->
+                <div class="lc-feature-card">
+                    <div class="lc-feature-header">
+                        <div class="lc-feature-badge" style="background: var(--gradient-orange);">
+                            <i class="fas fa-random"></i>
+                        </div>
+                        <span class="diff-tag">Automation</span>
+                    </div>
+                    <h3>Smart Conversation Routing</h3>
+                    <p>Automatically assign incoming conversations to the right agent based on skills, availability,
+                        language, or department — ensuring customers always reach the best help.</p>
+                    <div class="lc-feature-highlights">
+                        <div class="lc-highlight"><i class="fas fa-check-circle"></i> Skill-based assignment</div>
+                        <div class="lc-highlight"><i class="fas fa-check-circle"></i> Department routing</div>
+                        <div class="lc-highlight"><i class="fas fa-check-circle"></i> Load balancing</div>
+                        <div class="lc-highlight"><i class="fas fa-check-circle"></i> Priority queue</div>
+                    </div>
+                </div>
+
+                <!-- Telegram Gateway Card -->
+                <div class="lc-feature-card">
+                    <div class="lc-feature-header">
+                        <div class="lc-feature-badge" style="background: linear-gradient(135deg, #0088cc, #00b4d8);">
+                            <i class="fab fa-telegram-plane"></i>
+                        </div>
+                        <span class="diff-tag">Exclusive</span>
+                    </div>
+                    <h3>Telegram Gateway</h3>
+                    <p>Agents can reply to customer messages directly from the Telegram app — perfect for mobile teams.
+                        No need to open the dashboard; just reply from your phone.</p>
+                    <div class="lc-feature-highlights">
+                        <div class="lc-highlight"><i class="fas fa-check-circle"></i> Reply via Telegram app</div>
+                        <div class="lc-highlight"><i class="fas fa-check-circle"></i> Mobile-first support</div>
+                        <div class="lc-highlight"><i class="fas fa-check-circle"></i> Instant notifications</div>
+                        <div class="lc-highlight"><i class="fas fa-check-circle"></i> No dashboard needed</div>
+                    </div>
+                </div>
+
+                <!-- Real-Time Monitoring Card -->
+                <div class="lc-feature-card">
+                    <div class="lc-feature-header">
+                        <div class="lc-feature-badge" style="background: linear-gradient(135deg, #10b981, #34d399);">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <span class="diff-tag">Analytics</span>
+                    </div>
+                    <h3>Real-Time Monitoring</h3>
+                    <p>See who's online, track active conversations, monitor agent response times, and get performance
+                        reports — all in real time from the admin dashboard.</p>
+                    <div class="lc-feature-highlights">
+                        <div class="lc-highlight"><i class="fas fa-check-circle"></i> Live agent status</div>
+                        <div class="lc-highlight"><i class="fas fa-check-circle"></i> Response time metrics</div>
+                        <div class="lc-highlight"><i class="fas fa-check-circle"></i> Customer satisfaction</div>
+                        <div class="lc-highlight"><i class="fas fa-check-circle"></i> Export reports</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Agent Roles Workflow -->
+            <div class="lc-workflow-banner glass-card" data-animate="fade-up">
+                <div class="lc-workflow-visual">
+                    <h4>How Your Support Team Works</h4>
+                    <div class="lc-workflow-flow">
+                        <div class="lc-flow-step">
+                            <div class="lc-flow-node" style="background: var(--gradient-main);"><i
+                                    class="fas fa-comments"></i></div>
+                            <strong>Customer Message</strong>
+                            <span>From any channel</span>
+                        </div>
+                        <div class="lc-flow-arrow"><i class="fas fa-long-arrow-alt-right"></i></div>
+                        <div class="lc-flow-step">
+                            <div class="lc-flow-node" style="background: var(--gradient-purple);"><i
+                                    class="fas fa-robot"></i></div>
+                            <strong>AI First Response</strong>
+                            <span>Instant auto-reply</span>
+                        </div>
+                        <div class="lc-flow-arrow"><i class="fas fa-long-arrow-alt-right"></i></div>
+                        <div class="lc-flow-step">
+                            <div class="lc-flow-node" style="background: var(--gradient-orange);"><i
+                                    class="fas fa-route"></i></div>
+                            <strong>Smart Routing</strong>
+                            <span>Assign to best agent</span>
+                        </div>
+                        <div class="lc-flow-arrow"><i class="fas fa-long-arrow-alt-right"></i></div>
+                        <div class="lc-flow-step">
+                            <div class="lc-flow-node" style="background: linear-gradient(135deg, #10b981, #34d399);"><i
+                                    class="fas fa-headset"></i></div>
+                            <strong>Agent Resolves</strong>
+                            <span>Full context provided</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Supported Integrations Strip -->
+                <div class="lc-integrations">
+                    <span class="lc-integrations-label">Works With All Your Channels</span>
+                    <div class="lc-integration-icons">
+                        <div class="lc-int-icon" style="color:#25D366;"><i class="fab fa-whatsapp"></i></div>
+                        <div class="lc-int-icon" style="color:#0088cc;"><i class="fab fa-telegram-plane"></i></div>
+                        <div class="lc-int-icon" style="color:#0084FF;"><i class="fab fa-facebook-messenger"></i></div>
+                        <div class="lc-int-icon" style="color:#E4405F;"><i class="fab fa-instagram"></i></div>
+                        <div class="lc-int-icon" style="color:#1DA1F2;"><i class="fab fa-twitter"></i></div>
+                        <div class="lc-int-icon" style="color:#5865F2;"><i class="fab fa-discord"></i></div>
+                        <div class="lc-int-icon" style="color:#4A154B;"><i class="fab fa-slack"></i></div>
+                        <div class="lc-int-icon" style="color:#7360f2;"><i class="fab fa-viber"></i></div>
+                        <div class="lc-int-icon lc-int-more">+40</div>
+                    </div>
+                </div>
+
+                <div style="text-align:center; margin-top: 1.5rem;">
+                    <a href="https://app.aitextbotz.com/register" class="btn btn-primary">
+                        <span>Try Live Chat Free</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Built-in Forms Section ===== -->
+    <section class="forms-section">
+        <div class="container">
+            <div class="section-header" data-animate="fade-up">
+                <span class="chip">Data Collection</span>
+                <h2>Built-in <span class="gradient-text">Smart Forms</span></h2>
+                <p>Capture leads, feedback, and subscriptions without your visitors ever leaving the page.</p>
+            </div>
+
+            <div class="forms-grid">
+                <div class="form-card glass-card" data-animate="fade-up" data-delay="100">
+                    <div class="form-icon gradient-1"><i class="fas fa-comment-medical"></i></div>
+                    <h3>Feedback Form</h3>
+                    <p>Gather customer feedback seamlessly. Get entries via email, Telegram, or webhook integration.</p>
+                </div>
+                <div class="form-card glass-card" data-animate="fade-up" data-delay="200">
+                    <div class="form-icon gradient-2"><i class="fas fa-envelope-open-text"></i></div>
                     <h3>Newsletter Form</h3>
-                    <p>Increase signups with a registration widget. Link data to your newsletter service via webhooks.
+                    <p>Increase signups with registration widgets. Link data to your newsletter service via webhooks.
                     </p>
                 </div>
-                <div class="form-card">
-                    <div class="form-icon"><i class="fas fa-phone-volume"></i></div>
+                <div class="form-card glass-card" data-animate="fade-up" data-delay="300">
+                    <div class="form-icon gradient-3"><i class="fas fa-phone-volume"></i></div>
                     <h3>Callback Form</h3>
-                    <p>Collect names and phone numbers of potential customers requiring assistance.</p>
+                    <p>Collect names and phone numbers of potential customers requiring direct assistance.</p>
                 </div>
-                <div class="form-card">
-                    <div class="form-icon"><i class="fas fa-paper-plane"></i></div>
+                <div class="form-card glass-card" data-animate="fade-up" data-delay="400">
+                    <div class="form-icon gradient-4"><i class="fas fa-paper-plane"></i></div>
                     <h3>Direct Email Form</h3>
-                    <p>Allow visitors to ask questions directly. Customizable fields with optional GDPR checkbox.</p>
+                    <p>Let visitors ask questions directly. Fully customizable fields with optional GDPR checkbox.</p>
                 </div>
             </div>
-            <div class="form-builder-promo">
-                <h4><i class="fas fa-tools"></i> Powerful Form Builder</h4>
-                <p>Create your own forms. Add/remove fields, change labels, placeholders, and styling. Get notifications
-                    for every submission.</p>
+
+            <div class="form-builder-banner glass-card" data-animate="fade-up">
+                <div class="fbb-content">
+                    <i class="fas fa-tools"></i>
+                    <div>
+                        <h4>Powerful Form Builder</h4>
+                        <p>Create custom forms. Add/remove fields, change labels, placeholders, and styling. Get
+                            notified for every submission.</p>
+                    </div>
+                </div>
+                <a href="https://app.aitextbotz.com/register" class="btn btn-primary">
+                    <span>Build Your First Form</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- Platforms (CMS) -->
-    <section class="platforms">
+    <!-- ===== Integrations Section (Infographic) ===== -->
+    <section class="integrations-section">
         <div class="container">
-            <div class="section-header center">
-                <span class="subtitle">Any Site, Any CMS</span>
-                <h2>Integrate Anywhere</h2>
-                <p>Works with custom sites via Embed code or dedicated plugins.</p>
+            <div class="section-header" data-animate="fade-up">
+                <span class="chip">Ecosystem</span>
+                <h2>Powerful <span class="gradient-text">Integrations</span></h2>
+                <p>Connect AiTextBotz with the tools you already use. Automate workflows, sync data, and supercharge
+                    your customer communication stack.</p>
             </div>
-            <div class="logo-grid-small">
-                <div class="logo-box"><i class="fab fa-wordpress"></i><span>WordPress</span></div>
-                <div class="logo-box"><i class="fab fa-shopify"></i><span>Shopify</span></div>
-                <div class="logo-box"><i class="fab fa-wix"></i><span>WIX</span></div>
-                <div class="logo-box"><i class="fab fa-joomla"></i><span>Joomla</span></div>
-                <div class="logo-box"><i class="fab fa-opencart"></i><span>OpenCart</span></div>
-                <div class="logo-box"><i class="fab fa-magento"></i><span>Magento</span></div>
+
+            <!-- Integration Stats -->
+            <div class="int-stats-bar" data-animate="fade-up">
+                <div class="int-stat-item">
+                    <strong>6+</strong>
+                    <span>Native Integrations</span>
+                </div>
+                <div class="int-stat-sep"></div>
+                <div class="int-stat-item">
+                    <strong>Webhooks</strong>
+                    <span>Custom Automations</span>
+                </div>
+                <div class="int-stat-sep"></div>
+                <div class="int-stat-item">
+                    <strong>&lt;5 min</strong>
+                    <span>Avg. Setup Time</span>
+                </div>
+                <div class="int-stat-sep"></div>
+                <div class="int-stat-item">
+                    <strong>REST API</strong>
+                    <span>Full Developer Access</span>
+                </div>
+            </div>
+
+            <!-- Integration Cards Grid -->
+            <div class="int-infographic-grid" data-animate="fade-up">
+
+                <!-- reCaptcha V3 -->
+                <div class="int-info-card" data-animate="fade-up" data-delay="100">
+                    <div class="int-card-header">
+                        <div class="int-card-icon" style="background: linear-gradient(135deg, #4285F4, #34A853);">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <span class="int-setup-badge"><i class="fas fa-clock"></i> 2 min setup</span>
+                    </div>
+                    <h3>reCaptcha V3</h3>
+                    <span class="int-category-tag">Security</span>
+                    <p>Block spam bots and fraudulent submissions automatically. Google reCaptcha V3 runs invisibly in
+                        the background — no user interaction needed, just pure protection.</p>
+                    <div class="int-card-features">
+                        <div class="int-feat"><i class="fas fa-check"></i> Invisible protection</div>
+                        <div class="int-feat"><i class="fas fa-check"></i> Score-based filtering</div>
+                        <div class="int-feat"><i class="fas fa-check"></i> Zero user friction</div>
+                    </div>
+                </div>
+
+                <!-- Telegram -->
+                <div class="int-info-card" data-animate="fade-up" data-delay="150">
+                    <div class="int-card-header">
+                        <div class="int-card-icon" style="background: linear-gradient(135deg, #0088cc, #00b4d8);">
+                            <i class="fab fa-telegram-plane"></i>
+                        </div>
+                        <span class="int-setup-badge"><i class="fas fa-clock"></i> 1 min setup</span>
+                    </div>
+                    <h3>Telegram Notifications</h3>
+                    <span class="int-category-tag">Messaging</span>
+                    <p>Get instant push notifications for every new message, form entry, and agent event — delivered
+                        straight to your Telegram app or group chat.</p>
+                    <div class="int-card-features">
+                        <div class="int-feat"><i class="fas fa-check"></i> Real-time push alerts</div>
+                        <div class="int-feat"><i class="fas fa-check"></i> Group chat support</div>
+                        <div class="int-feat"><i class="fas fa-check"></i> Custom notification rules</div>
+                    </div>
+                </div>
+
+                <!-- Twilio -->
+                <div class="int-info-card" data-animate="fade-up" data-delay="200">
+                    <div class="int-card-header">
+                        <div class="int-card-icon" style="background: linear-gradient(135deg, #F22F46, #FF6B6B);">
+                            <i class="fas fa-sms"></i>
+                        </div>
+                        <span class="int-setup-badge"><i class="fas fa-clock"></i> 3 min setup</span>
+                    </div>
+                    <h3>Twilio SMS</h3>
+                    <span class="int-category-tag">SMS &amp; Voice</span>
+                    <p>Send and receive SMS notifications, alerts, and OTPs through Twilio's global SMS network. Perfect
+                        for order updates, appointment reminders, and two-factor auth.</p>
+                    <div class="int-card-features">
+                        <div class="int-feat"><i class="fas fa-check"></i> Global SMS delivery</div>
+                        <div class="int-feat"><i class="fas fa-check"></i> Two-way messaging</div>
+                        <div class="int-feat"><i class="fas fa-check"></i> OTP & verification</div>
+                    </div>
+                </div>
+
+                <!-- Google Analytics -->
+                <div class="int-info-card" data-animate="fade-up" data-delay="250">
+                    <div class="int-card-header">
+                        <div class="int-card-icon" style="background: linear-gradient(135deg, #F9AB00, #E37400);">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                        <span class="int-setup-badge"><i class="fas fa-clock"></i> 2 min setup</span>
+                    </div>
+                    <h3>Google Analytics</h3>
+                    <span class="int-category-tag">Analytics</span>
+                    <p>Track widget opens, button clicks, form submissions, and chat conversions directly in GA4.
+                        Understand how chat drives engagement and revenue on your site.</p>
+                    <div class="int-card-features">
+                        <div class="int-feat"><i class="fas fa-check"></i> GA4 event tracking</div>
+                        <div class="int-feat"><i class="fas fa-check"></i> Conversion goals</div>
+                        <div class="int-feat"><i class="fas fa-check"></i> UTM parameter support</div>
+                    </div>
+                </div>
+
+                <!-- Perfex CRM -->
+                <div class="int-info-card" data-animate="fade-up" data-delay="300">
+                    <div class="int-card-header">
+                        <div class="int-card-icon" style="background: var(--gradient-purple);">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <span class="int-setup-badge"><i class="fas fa-clock"></i> 5 min setup</span>
+                    </div>
+                    <h3>Perfex CRM</h3>
+                    <span class="int-category-tag">CRM</span>
+                    <p>Automatically create leads, contacts, and tickets in Perfex CRM from chat conversations and form
+                        submissions. Keep your sales pipeline synced in real time.</p>
+                    <div class="int-card-features">
+                        <div class="int-feat"><i class="fas fa-check"></i> Auto lead creation</div>
+                        <div class="int-feat"><i class="fas fa-check"></i> Contact sync</div>
+                        <div class="int-feat"><i class="fas fa-check"></i> Ticket generation</div>
+                    </div>
+                </div>
+
+                <!-- Email SMTP -->
+                <div class="int-info-card" data-animate="fade-up" data-delay="350">
+                    <div class="int-card-header">
+                        <div class="int-card-icon" style="background: linear-gradient(135deg, #EA4335, #FBBC05);">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <span class="int-setup-badge"><i class="fas fa-clock"></i> 3 min setup</span>
+                    </div>
+                    <h3>Email (SMTP)</h3>
+                    <span class="int-category-tag">Communication</span>
+                    <p>Forward chat transcripts, form entries, and agent notifications to any email inbox via your own
+                        SMTP server — Gmail, Outlook, SendGrid, or any provider.</p>
+                    <div class="int-card-features">
+                        <div class="int-feat"><i class="fas fa-check"></i> Custom SMTP support</div>
+                        <div class="int-feat"><i class="fas fa-check"></i> Chat transcript forwarding</div>
+                        <div class="int-feat"><i class="fas fa-check"></i> Auto-notification emails</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Webhook / API Banner -->
+            <div class="int-api-banner glass-card" data-animate="fade-up">
+                <div class="int-api-visual">
+                    <div class="api-node api-node-center">
+                        <i class="fas fa-plug"></i>
+                    </div>
+                    <div class="api-orbiting-icons">
+                        <div class="api-orbit-icon" style="--angle: 0deg; --color: #FF6B6B;"><i class="fas fa-code"></i>
+                        </div>
+                        <div class="api-orbit-icon" style="--angle: 60deg; --color: #4FC3F7;"><i
+                                class="fas fa-database"></i></div>
+                        <div class="api-orbit-icon" style="--angle: 120deg; --color: #81C784;"><i
+                                class="fas fa-cogs"></i></div>
+                        <div class="api-orbit-icon" style="--angle: 180deg; --color: #FFB74D;"><i
+                                class="fas fa-cloud"></i></div>
+                        <div class="api-orbit-icon" style="--angle: 240deg; --color: #BA68C8;"><i
+                                class="fas fa-lock"></i></div>
+                        <div class="api-orbit-icon" style="--angle: 300deg; --color: #4DD0E1;"><i
+                                class="fas fa-bolt"></i></div>
+                    </div>
+                </div>
+                <div class="int-api-text">
+                    <h4>Webhooks & REST API</h4>
+                    <p>Need a custom integration? Use our powerful <strong>Webhook system</strong> to send real-time
+                        data to any endpoint, or leverage the <strong>REST API</strong> for full programmatic control —
+                        create bots, manage conversations, and sync data with your existing stack.</p>
+                    <div class="int-api-highlights">
+                        <span><i class="fas fa-check-circle"></i> Real-time webhooks</span>
+                        <span><i class="fas fa-check-circle"></i> Full REST API</span>
+                        <span><i class="fas fa-check-circle"></i> Documentation included</span>
+                        <span><i class="fas fa-check-circle"></i> Developer-friendly</span>
+                    </div>
+                    <a href="https://app.aitextbotz.com/register" class="btn btn-primary" style="margin-top: 1rem;">
+                        <span>Explore Integrations</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Useful Integrations -->
-    <section id="integrations" class="integrations section-light">
+    <!-- ===== Pricing Section ===== -->
+    <section id="pricing" class="pricing-section">
         <div class="container">
-            <div class="section-header center">
-                <span class="subtitle">Ecosystem</span>
-                <h2>Useful Integrations</h2>
+            <div class="section-header" data-animate="fade-up">
+                <span class="chip">Simple Pricing</span>
+                <h2>Plans That <span class="gradient-text">Grow With You</span></h2>
+                <p>Start free. Upgrade when you're ready. No hidden fees.</p>
             </div>
-            <div class="integrations-cards">
-                <div class="int-card">
-                    <div class="int-icon"><i class="fas fa-shield-alt"></i></div>
-                    <h4>reCaptcha V3</h4>
-                    <p>Prevent SPAM automatically</p>
+
+            <div class="pricing-toggle" data-animate="fade-up">
+                <span class="toggle-label active" id="monthlyLabel">Monthly</span>
+                <div class="toggle-switch" id="pricingToggle">
+                    <div class="toggle-knob"></div>
                 </div>
-                <div class="int-card">
-                    <div class="int-icon"><i class="fab fa-telegram-plane"></i></div>
-                    <h4>Telegram</h4>
-                    <p>Receive notifications instantly</p>
+                <span class="toggle-label" id="yearlyLabel">Yearly <span class="save-badge">Save 20%</span></span>
+            </div>
+
+            <div class="pricing-cards">
+                <!-- Starter -->
+                <div class="pricing-card glass-card" data-animate="fade-up" data-delay="100">
+                    <div class="pricing-header">
+                        <h3>Starter</h3>
+                        <p>Perfect for small businesses</p>
+                    </div>
+                    <div class="pricing-price">
+                        <span class="price-amount monthly-price">$19</span>
+                        <span class="price-amount yearly-price" style="display:none;">$15</span>
+                        <span class="price-period">/month</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> 5 Contact Channels</li>
+                        <li><i class="fas fa-check"></i> 1 Chat Agent</li>
+                        <li><i class="fas fa-check"></i> 1,000 Messages/mo</li>
+                        <li><i class="fas fa-check"></i> Live Chat Widget</li>
+                        <li><i class="fas fa-check"></i> Basic Analytics</li>
+                        <li><i class="fas fa-check"></i> Email Support</li>
+                    </ul>
+                    <a href="https://app.aitextbotz.com/register" class="btn btn-outline btn-block">Get Started</a>
                 </div>
-                <div class="int-card">
-                    <div class="int-icon"><i class="fas fa-sms"></i></div>
-                    <h4>Twilio</h4>
-                    <p>Receive SMS notifications</p>
+
+                <!-- Pro (Popular) -->
+                <div class="pricing-card glass-card popular" data-animate="fade-up" data-delay="200">
+                    <div class="popular-badge">Most Popular</div>
+                    <div class="pricing-header">
+                        <h3>Professional</h3>
+                        <p>For growing teams</p>
+                    </div>
+                    <div class="pricing-price">
+                        <span class="price-amount monthly-price">$49</span>
+                        <span class="price-amount yearly-price" style="display:none;">$39</span>
+                        <span class="price-period">/month</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> 25 Contact Channels</li>
+                        <li><i class="fas fa-check"></i> 5 Chat Agents</li>
+                        <li><i class="fas fa-check"></i> 10,000 Messages/mo</li>
+                        <li><i class="fas fa-check"></i> AI Chatbot (GPT-4o)</li>
+                        <li><i class="fas fa-check"></i> Advanced Analytics</li>
+                        <li><i class="fas fa-check"></i> Priority Support</li>
+                        <li><i class="fas fa-check"></i> Custom Forms</li>
+                    </ul>
+                    <a href="https://app.aitextbotz.com/register" class="btn btn-primary btn-block">Start Free
+                        Trial</a>
                 </div>
-                <div class="int-card">
-                    <div class="int-icon"><i class="fas fa-chart-bar"></i></div>
-                    <h4>Google Analytics</h4>
-                    <p>Track events and conversions</p>
-                </div>
-                <div class="int-card">
-                    <div class="int-icon"><i class="fas fa-briefcase"></i></div>
-                    <h4>Perfex CRM</h4>
-                    <p>Create leads directly in CRM</p>
+
+                <!-- Enterprise -->
+                <div class="pricing-card glass-card" data-animate="fade-up" data-delay="300">
+                    <div class="pricing-header">
+                        <h3>Enterprise</h3>
+                        <p>For large organizations</p>
+                    </div>
+                    <div class="pricing-price">
+                        <span class="price-amount monthly-price">$129</span>
+                        <span class="price-amount yearly-price" style="display:none;">$99</span>
+                        <span class="price-period">/month</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Unlimited Channels</li>
+                        <li><i class="fas fa-check"></i> Unlimited Agents</li>
+                        <li><i class="fas fa-check"></i> Unlimited Messages</li>
+                        <li><i class="fas fa-check"></i> White-label Solution</li>
+                        <li><i class="fas fa-check"></i> Custom Integrations</li>
+                        <li><i class="fas fa-check"></i> Dedicated Account Manager</li>
+                        <li><i class="fas fa-check"></i> SLA Guarantee</li>
+                    </ul>
+                    <a href="https://app.aitextbotz.com/register" class="btn btn-outline btn-block">Contact Sales</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <section class="testimonials section-dark-bg">
-        <div class="container">
-            <div class="section-header center">
-                <span class="subtitle">Success Stories</span>
-                <h2>Trusted by High-Growth Companies</h2>
-            </div>
-            <div class="testimonials-grid">
-                <!-- Testimonial 1 -->
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        <div class="stars">
-                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                class="fas fa-star"></i><i class="fas fa-star"></i>
-                        </div>
-                        <p>"AiTextBotz transformed our customer support. We reduced response times by 80% and increased
-                            sales conversions overnight. The unified inbox is a game changer."</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-avatar"><i class="fas fa-user-circle"></i></div>
-                        <div class="author-info">
-                            <h5>Sarah Johnson</h5>
-                            <span>CMO at TechFlow</span>
-                        </div>
-                    </div>
-                </div>
-                <!-- Testimonial 2 -->
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        <div class="stars">
-                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                class="fas fa-star"></i><i class="fas fa-star"></i>
-                        </div>
-                        <p>"The ability to integrate WhatsApp, Telegram, and our website chat into one dashboard has
-                            simplified our workflow immensely. Highly recommended!"</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-avatar"><i class="fas fa-user-circle"></i></div>
-                        <div class="author-info">
-                            <h5>David Chen</h5>
-                            <span>Founder, UrbanStyle</span>
-                        </div>
-                    </div>
-                </div>
-                <!-- Testimonial 3 -->
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        <div class="stars">
-                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                class="fas fa-star"></i><i class="fas fa-star"></i>
-                        </div>
-                        <p>"Setup was incredibly easy. We were up and running with automated flows in less than an hour.
-                            The support team is also fantastic and very responsive."</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-avatar"><i class="fas fa-user-circle"></i></div>
-                        <div class="author-info">
-                            <h5>Emily Davis</h5>
-                            <span>Head of Support, FinWise</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- FAQ Section (Preserved) -->
-    <section id="faq" class="faq">
+    <!-- ===== FAQ Section ===== -->
+    <section id="faq" class="faq-section">
         <div class="container">
-            <div class="section-header center">
-                <span class="subtitle">FAQ</span>
-                <h2>Frequently Asked Questions</h2>
+            <div class="section-header" data-animate="fade-up">
+                <span class="chip">FAQ</span>
+                <h2>Frequently Asked <span class="gradient-text">Questions</span></h2>
+                <p>Everything you need to know about AiTextBotz.</p>
             </div>
-            <div class="faq-list">
+
+            <div class="faq-list" data-animate="fade-up">
                 <div class="faq-item">
-                    <button class="faq-question">
-                        Is there a free trial?
-                        <i class="fas fa-chevron-down"></i>
+                    <button class="faq-question" id="faq-1">
+                        <span>Is there a free trial?</span>
+                        <div class="faq-icon"><i class="fas fa-plus"></i></div>
                     </button>
                     <div class="faq-answer">
                         <p>Yes, we offer a 14-day free trial with full access to all features. No credit card required.
-                        </p>
+                            You can explore every feature and decide which plan works best for your business.</p>
                     </div>
                 </div>
                 <div class="faq-item">
-                    <button class="faq-question">
-                        Can I integrate with my existing CRM?
-                        <i class="fas fa-chevron-down"></i>
+                    <button class="faq-question" id="faq-2">
+                        <span>Can I integrate with my existing CRM?</span>
+                        <div class="faq-icon"><i class="fas fa-plus"></i></div>
                     </button>
                     <div class="faq-answer">
-                        <p>Absolutely via our API and native integrations with popular CRMs like Salesforce, HubSpot,
-                            and Zoho.</p>
+                        <p>Absolutely! We offer native integrations with popular CRMs like Salesforce, HubSpot, Zoho,
+                            and Perfex CRM. You can also use our API and webhooks for custom integrations.</p>
                     </div>
                 </div>
                 <div class="faq-item">
-                    <button class="faq-question">
-                        Do I need coding skills?
-                        <i class="fas fa-chevron-down"></i>
+                    <button class="faq-question" id="faq-3">
+                        <span>Do I need coding skills?</span>
+                        <div class="faq-icon"><i class="fas fa-plus"></i></div>
                     </button>
                     <div class="faq-answer">
                         <p>Not at all! Our visual flow builder allows you to create complex chatbot flows using a simple
-                            drag-and-drop interface.</p>
+                            drag-and-drop interface. Just copy-paste the widget code to your site — that's it.</p>
                     </div>
                 </div>
                 <div class="faq-item">
-                    <button class="faq-question">
-                        Can I use it on multiple websites?
-                        <i class="fas fa-chevron-down"></i>
+                    <button class="faq-question" id="faq-4">
+                        <span>Can I use it on multiple websites?</span>
+                        <div class="faq-icon"><i class="fas fa-plus"></i></div>
                     </button>
                     <div class="faq-answer">
-                        <p>Yes, our Pro and Business plans support multiple domain installations. You can manage all
-                            your sites from a single dashboard.</p>
+                        <p>Yes! Our Pro and Business plans support multiple domain installations. You can manage all
+                            your sites from a single centralized dashboard.</p>
                     </div>
                 </div>
                 <div class="faq-item">
-                    <button class="faq-question">
-                        Is my data secure?
-                        <i class="fas fa-chevron-down"></i>
+                    <button class="faq-question" id="faq-5">
+                        <span>Is my data secure?</span>
+                        <div class="faq-icon"><i class="fas fa-plus"></i></div>
                     </button>
                     <div class="faq-answer">
-                        <p>We take security seriously. All data is encrypted at rest and in transit using
-                            industry-standard AES-256 encryption protocols.</p>
+                        <p>Absolutely. All data is encrypted at rest and in transit using industry-standard AES-256
+                            encryption protocols. We're fully GDPR compliant and offer data processing agreements.</p>
                     </div>
                 </div>
                 <div class="faq-item">
-                    <button class="faq-question">
-                        Do you offer custom enterprise solutions?
-                        <i class="fas fa-chevron-down"></i>
+                    <button class="faq-question" id="faq-6">
+                        <span>Do you offer custom enterprise solutions?</span>
+                        <div class="faq-icon"><i class="fas fa-plus"></i></div>
                     </button>
                     <div class="faq-answer">
                         <p>Yes, we offer tailored solutions for large enterprises including custom integrations,
-                            dedicated support, and SLA guarantees. Contact our sales team for details.</p>
+                            white-label options, dedicated support, and SLA guarantees. Contact our sales team for
+                            details.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="cta-section">
+    <!-- ===== Final CTA Section ===== -->
+    <section class="final-cta-section">
         <div class="container">
-            <div class="cta-content">
-                <h2>Ready to automate your business?</h2>
-                <p>Join thousands of businesses using AiTextBotz today.</p>
-                <div class="cta-buttons">
-                    <a href="https://app.aitextbotz.com/register" class="btn btn-lg btn-primary">Get Started Now</a>
+            <div class="final-cta-card" data-animate="fade-up">
+                <div class="cta-glow"></div>
+                <h2>Ready to Transform Your Customer Communication?</h2>
+                <p>Join 500+ businesses already using AiTextBotz to automate, engage, and grow.</p>
+                <div class="cta-actions">
+                    <a href="https://app.aitextbotz.com/register" class="btn btn-white btn-lg" id="finalCtaBtn">
+                        <span>Get Started Free</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
                 </div>
+                <span class="cta-note">No credit card required • 14-day free trial</span>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- ===== Footer ===== -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-top">
+            <div class="footer-grid">
                 <div class="footer-brand">
-                    <div class="footer-logo">
-                        <img src="assets/img/logo-1.png" alt="AiTextBotz" class="logo-img"
-                            style="filter: brightness(0) invert(1);">
-                        <span class="logo-text" style="display: none; color: white;">AiTextBotz</span>
-                    </div>
+                    <a href="#" class="footer-logo">
+                        <img src="img/logo-1.png" alt="AiTextBotz" class="footer-logo-img">
+                    </a>
                     <p>Reinventing customer communication with Artificial Intelligence. Build better relationships,
                         automatically.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#channels">Channels</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
+                        <li><a href="#how-it-works">How It Works</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">API Reference</a></li>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 AiTextBotz. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy</a>
+                    <span class="dot-sep">•</span>
+                    <a href="#">Terms</a>
+                    <span class="dot-sep">•</span>
+                    <a href="#">Cookies</a>
                 </div>
             </div>
         </div>
     </footer>
+
+    <!-- ===== Back to Top ===== -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
 
     <script src="script.js"></script>
 </body>
